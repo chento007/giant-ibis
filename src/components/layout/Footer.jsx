@@ -19,8 +19,20 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useEffect } from 'react';
 
 const Footer = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://www.jscache.com/wejs?wtype=cdsratingsonlynarrow&amp;uniq=977&amp;locationId=33053846&amp;lang=en_US&amp;border=true&amp;shadow=false&amp;backgroundColor=white&amp;display_version=2";
+    script.async = true;
+    script.onload = function() { this.loadtrk = true; };
+    const targetDiv = document.getElementById('TA_cdsratingsonlynarrow977');
+    if (targetDiv) {
+      targetDiv.parentNode.insertBefore(script, targetDiv.nextSibling);
+    }
+  }, []);
+
   return (
     <footer className="pt-12 bg-white mx-auto w-full">
       <div className="w-full mx-auto px-4 lg:px-20">
@@ -186,13 +198,16 @@ const Footer = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-[25px]">
                 <div>
                   <h3 className="font-semibold mb-4">Trip Advisor</h3>
-                  <Image
-                    src="/assets/images/tripadvisor.png"
-                    alt="KHR"
-                    width={145}
-                    height={104}
-                    className="w-auto h-auto"
-                  />
+                  {/* Removed the old Image component */}
+                  <div id="TA_cdsratingsonlynarrow977" className="TA_cdsratingsonlynarrow">
+                    <ul id="PARHqv" className="TA_links c2OwGtK7q9">
+                      <li id="OsV0PMkdd2" className="zCWC4MSg">
+                        <a target="_blank" href="https://www.tripadvisor.com/Attraction_Review-g293940-d33053846-Reviews-Trayorng_Yeak_Tesachar-Phnom_Penh.html">
+                          <img src="https://www.tripadvisor.com/img/cdsi/img2/branding/v2/Tripadvisor_lockup_horizontal_secondary_registered-18034-2.svg" alt="TripAdvisor"/>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
                 <div>

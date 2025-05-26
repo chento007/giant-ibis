@@ -40,10 +40,14 @@ export class RouteService {
                     const routeTiming = timing?.data[index] || null;
                     const routeTimingMetaValue = timing?.data[index]?.meta_value || null;
                     const destinationTime = addHoursToTime(routeTimingMetaValue, route?.destination);
+
+                    // Ensure metaTime is in "hh:mm A" format
+                    const formattedMetaTime = moment(routeTimingMetaValue, "HH:mm").format('hh:mm A');
+
                     const arrivalDate = calculateArrival({
                         departureTime: travelDate,
                         durationHours: route?.duration,
-                        metaTime: timing.data[index].meta_value
+                        metaTime: formattedMetaTime // Use the formatted time here
                     })
 
                     // address
