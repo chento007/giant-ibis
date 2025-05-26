@@ -165,7 +165,7 @@ const Home = () => {
             </div>
             <h3 className="text-lg  text-primary">Pay</h3>
             <p className="text-sm text-gray-600">
-              Pay with KHQR, ABA Pay, Visa, MasterCard, or UPI.
+              Pay with KHQR, Visa, MasterCard, or UPI.
             </p>
           </div>
         </div>
