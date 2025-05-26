@@ -7,7 +7,7 @@ export const Banner = () => {
         <div className="relative">
             <div className="relative before:absolute before:inset-0 before:bg-black before:opacity-20">
                 <Image
-                    src="/assets/images/hero2.png"
+                    src="/assets/images/hero.jpg"
                     alt="Hero Image"
                     className="object-cover h-[350px] w-full object-center"
                     width={1920}
