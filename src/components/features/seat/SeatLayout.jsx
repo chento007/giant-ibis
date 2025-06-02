@@ -80,7 +80,7 @@ export const SeatLayout = ({ onSelectSeat, busType, allSeatStatus }) => {
     };
 
     return (
-        <div className={cn("seat-layout-container")}>
+        <div className={cn("")}>
             {renderBusLayout()}
         </div>
     );

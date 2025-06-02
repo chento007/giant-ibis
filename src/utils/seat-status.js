@@ -28,28 +28,28 @@ export const renderBusLayout = (status, seat) => {
             return <></>;
         case 'Available':
             return <div className="flex flex-col items-center ">
-                <RockingChair className="w-8 h-8" />
-                <span className="text-xs font-medium text-white">{seat}</span>
+                <img src="/assets/icons/avalable-seat.png" className='w-8 h-[45px]' alt="" />
+                <span className="text-xs font-medium text-black">{seat}</span>
             </div>;
         case 'Reserved':
             return <div className="flex flex-col items-center ">
-                <RockingChair className="w-8 h-8" />
-                <span className="text-xs font-medium text-white">{seat}</span>
+                <img src="/assets/icons/reserved-seat.png" className='w-8 h-10' alt="" />
+                <span className="text-xs font-medium text-black">{seat}</span>
             </div>;
         case 'selected':
             return <div className="flex flex-col items-center ">
-                <RockingChair className="w-8 h-8" />
-                <span className="text-xs font-medium text-white">{seat}</span>
+                <img src="/assets/icons/selected-seat.png" className='w-8 h-10' alt="" />
+                <span className="text-xs font-medium text-black">{seat}</span>
             </div>;
         case 'Booked':
             return <div className="flex flex-col items-center ">
-                <RockingChair className="w-8 h-8" />
-                <span className="text-xs font-medium text-white">{seat}</span>
+                <img src="/assets/icons/reserved-seat.png" className='w-8 h-8' alt="" />
+                <span className="text-xs font-medium text-black">{seat}</span>
             </div>;
         case 'wc':
             return (<div className='flex flex-col items-center'>
                 <Toilet className="w-7 h-7" />
-                <span className="text-xs font-medium">WC</span>
+                <span className="text-xs font-medium black">WC</span>
             </div>)
     }
 };

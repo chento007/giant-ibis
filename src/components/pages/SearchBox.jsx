@@ -40,7 +40,7 @@ export default function SearchBookForm() {
   const return_date_param = searchParams.get('return_date') ? dayjs(searchParams.get('return_date'), "DD-MM-YYYY") : null;
   const trip_type_param = searchParams.get('trip_type') || 'one-way';
 
-  const passenger_count = searchParams.get('passenger_count') || 0;
+  const passenger_count = searchParams.get('passenger_count') || 1;
 
   /**
    * state filter
@@ -295,7 +295,7 @@ export default function SearchBookForm() {
         <div id='result_search'>
           {
             loading || isLoading ? <LoadingWithText /> : <>
-              <div className="max-w-7xl py-16 mx-auto">
+              <div className="max-w-7xl py-16 mx-auto w-full">
                 {
                   trips?.length > 0 ? <>
                     <AvailableTripItems

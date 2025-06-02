@@ -90,7 +90,7 @@ export class RouteService {
                         seat_status: bus_status,
                         originDetail: {
                             city: originDetail,
-                            leaveAt: moment(travelDate).format('MMMM-DD-YYYY'),
+                            leaveAt: moment(travelDate).format('MMMM-DD'),
                             time: timing.data[index].meta_value,
                             address: addressOrigin?.data?.length > 0 ? addressOrigin?.data[0] : null
                         },

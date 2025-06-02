@@ -34,7 +34,7 @@ export default function SearchBookForm() {
   const [destination, setDestination] = useState(null);
   const [departureDate, setDepartureDate] = useState(null);
   const [returnDate, setReturnDate] = useState();
-  const [passengers, setPassengers] = useState(0);
+  const [passengers, setPassengers] = useState(1);
 
   /**
    * 
@@ -217,6 +217,7 @@ export default function SearchBookForm() {
               <div className="flex lg:col-span-3 gap-3">
 
                 <SelectPassengerCount
+                  defaultPassenger={passengers}
                   isError={passengerCountError}
                   onChange={(count) => setPassengers(count)}
                 />

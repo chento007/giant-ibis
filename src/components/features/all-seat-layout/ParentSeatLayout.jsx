@@ -37,9 +37,9 @@ export default function ParentSeatLayout({
         <>
             {
                 seatData ? (
-                    <div>
+                    <div className='w-full'>
                         <div className="text-black text-center mb-5 text-sm">Vechicle Type: {busType}</div>
-                        <div className={cn(`grid ml-8 gap-3`, colMapping[seatData?.col] || 'grid-cols-4')}>
+                        <div className={cn(`grid max-sm:ml-0 ml-8 gap-2`, colMapping[seatData?.col] || 'grid-cols-2')}>
                             {
                                 busType === "Sleeper Bus" ? <BunkComponent colSpan={Colspan[seatData.col]} title={"Bottom Bunk"} /> : <></>
                             }
@@ -47,10 +47,10 @@ export default function ParentSeatLayout({
 
                                 <button
                                     className={cn(
-                                        `w-12 h-12 flex items-center justify-center rounded-lg border-1 border-black`,
+                                        `w-12 h-12 flex items-center justify-center rounded-lg `,
                                     )}
                                 >
-                                    <img src="/assets/images/driver.jpg" className='w-[50px] rounded-lg border-1 border-black' alt="" />
+                                    <img src="/assets/icons/driver-seat.png" className='w-[45px] h-[50px]' alt="" />
                                 </button>
                             </div>
                             {seatData?.seats?.map((item, index) => {
@@ -62,10 +62,10 @@ export default function ParentSeatLayout({
                                             <div className={cn('', Colspan[seatData.col])}>
                                                 <button
                                                     className={cn(
-                                                        `w-12 h-12 flex items-center justify-center rounded-lg border-1 border-black`,
+                                                        `w-12 h-[60px] flex items-center justify-center rounded-lg `,
                                                     )}
                                                 >
-                                                    <img src="/assets/images/driver.jpg" className='w-[50px] rounded-lg border-1 border-black' alt="" />
+                                                    <img src="/assets/icons/driver-seat.png" className='w-[45px] h-[50px]' alt="" />
                                                 </button>
                                             </div>
                                         </div>
@@ -80,7 +80,7 @@ export default function ParentSeatLayout({
                                             disabled={item?.status == 'Booked' || item?.status == 'Reserved' || item?.status == 'wc' || item?.status == 'hide'}
                                             onClick={() => onClick(item)}
                                             className={cn(
-                                                `w-12 h-full flex items-center justify-center rounded-lg ${getStatusColor(item?.status)} ${rowSpan[item?.rowSpan]}`,
+                                                `w-12 h-[60px] flex items-center justify-center rounded-lg ${getStatusColor(item?.status)} ${rowSpan[item?.rowSpan]}`,
                                                 item?.status == 'Available' ? 'cursor-pointer' : '',
                                                 item?.status == 'Booked' ? 'cursor-not-allowed' : '',
                                                 item?.status == 'Reserved' ? 'cursor-not-allowed' : '',
@@ -99,7 +99,7 @@ export default function ParentSeatLayout({
                                         disabled={item?.status == 'Booked' || item?.status == 'Reserved' || item?.status == 'wc' || item?.status == 'hide'}
                                         onClick={() => onClick(item)}
                                         className={cn(
-                                            `w-12 h-12 flex items-center justify-center rounded-lg ${getStatusColor(item?.status)}`,
+                                            `w-12 h-[60px] flex items-center justify-center rounded-lg ${getStatusColor(item?.status)} text-black`,
                                             item?.status == 'Available' ? 'cursor-pointer' : '',
                                             item?.status == 'Booked' ? 'cursor-not-allowed' : '',
                                             item?.status == 'Reserved' ? 'cursor-not-allowed' : '',

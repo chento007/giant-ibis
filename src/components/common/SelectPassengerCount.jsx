@@ -5,7 +5,7 @@ import { Dropdown, InputNumber, Button } from 'antd';
 import { User } from 'lucide-react';
 import { Label } from '@radix-ui/react-label';
 
-export default function SelectPassengerCount({ onChange, defaultPassenger = 0, isError }) {
+export default function SelectPassengerCount({ onChange, defaultPassenger = 1, isError }) {
     const [passengerCount, setPassengerCount] = useState(defaultPassenger);
 
     const updateCount = (newCount) => {

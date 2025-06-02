@@ -88,10 +88,20 @@ export function getCityName({ cities, id }) {
 }
 
 
-// Extract hours from "6 hours" string
+// Extract total hours from a duration string like "6 hours 30 min"
 export const parseDurationHours = (durationStr) => {
-  return parseInt(durationStr) || 0;
+  const hoursMatch = durationStr.match(/(\d+)\s*hour/);
+  const minutesMatch = durationStr.match(/(\d+)\s*min/);
+  const secondsMatch = durationStr.match(/(\d+)\s*sec/);
+
+  const hours = hoursMatch ? parseInt(hoursMatch[1]) : 0;
+  const minutes = minutesMatch ? parseInt(minutesMatch[1]) : 0;
+  const seconds = secondsMatch ? parseInt(secondsMatch[1]) : 0;
+
+  // Convert everything to hours
+  return hours + minutes / 60 + seconds / 3600;
 };
+
 
 // Combine ISO date (YYYY-MM-DD) with 12-hour time (HH:MM AM/PM)
 export const combineDateTime = (isoDate, time12hr) => {
@@ -115,7 +125,7 @@ export const calculateArrival = ({ departureTime, durationHours, metaTime }) => 
 
   const arrival = departure.add(duration, 'hour');
 
-  return arrival.format('MMMM-DD-YYYY'); // example: 2025-06-01 08:30 PM
+  return arrival.format('MMMM-DD'); // example: 2025-06-01 08:30 PM
 };
 
 export const calculateArrivalTime = ({ departureTime, durationHours, metaTime }) => {
@@ -123,6 +133,7 @@ export const calculateArrivalTime = ({ departureTime, durationHours, metaTime })
   const duration = parseDurationHours(durationHours);
 
   const arrival = departure.add(duration, 'hour');
-
-  return arrival.format('hh:mm A'); // example: 2025-06-01 08:30 PM
+  console.log({ departureTime, durationHours, metaTime , arrival: arrival.format('hh:mm A')});
+  
+  return arrival.format('hh:mm A'); 
 };

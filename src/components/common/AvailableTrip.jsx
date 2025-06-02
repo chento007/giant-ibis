@@ -763,10 +763,10 @@ export const AvailableTripItems = ({
         );
     } else if (activeStep === "seat") {
         return (
-            <div>
+            <div className='w-full'>
                 <BookProgress activeStep={activeStep} />
-                <div className="grid md:grid-cols-3 gap-8" id="select_seat">
-                    <div className="flex flex-col ">
+                <div className="grid md:grid-cols-3 gap-8  w-full" id="select_seat">
+                    <div className="flex flex-col w-full">
                         <div className="p-6 shadow-custom rounded-lg md:col-span-1">
                             <SeatLayout
                                 busType={routeSelected?.bus_type}
