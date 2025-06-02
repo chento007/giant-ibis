@@ -1,0 +1,64 @@
+import React from 'react'
+import FacilityAvailable from './FacilityAvalable'
+import { Bus, MapPin } from 'lucide-react'
+import RouteInfor from '../ui/RouteInfor'
+import AddressGoogleMap from './AddressGoogleMap'
+
+export default function RouteDetailComponent({ route, selectedSeat }) {
+    return (
+        <div className="space-y-6">
+            <div>
+                <h2 className="text-xl font-semibold max-sm:text-[14px]">Departure Trip Details</h2>
+                <div className="flex justify-between items-start mt-2">
+                    <span className="font-bold max-sm:text-[12px]">{route?.bus_type}</span>
+                    <span className="text-pink-600 font-bold max-sm:text-[12px] text-right">
+                        Seat Number: [ {selectedSeat?.map((item, index) => (<span key={index}>{item?.seat} , </span>)) || "-"} ]
+                    </span>
+                </div>
+                <FacilityAvailable facilities={route?.facilities} />
+            </div>
+            <div className="">
+                <div className="flex items-center justify-between">
+                    <div>
+                        <RouteInfor
+                            city={route?.originDetail?.city?.city_name}
+                            departure_date={route?.originDetail?.leaveAt}
+                            isStart={true}
+                            time={route?.timing?.meta_value}
+                            routeId={route?.id}
+                            address={route?.originDetail?.address?.url}
+                        />
+                    </div>
+                    <Bus className="w-5 h-5 text-secondary ml-2" />
+                    <div className="flex-1 px-4 relative">
+                        <div className="text-center mt-6 text-sm text-gray-500">
+                            {route?.duration}
+                        </div>
+                        <div className="absolute  inset-x-0 top-11 border-t  border-red-200"></div>
+                        <div className="text-center text-sm text-gray-500">
+                            {route?.kilo_meters} KM
+                        </div>
+                    </div>
+                    <div className="flex   items-center text-right">
+                        <MapPin className="w-5 h-5 text-secondary mr-2" />
+
+                        <div className='relative'>
+                            <RouteInfor
+                                city={route?.destinationDetail?.city?.city_name}
+                                routeId={route?.id}
+                                departure_date={route?.destinationDetail?.arriveAt}
+                                isStart={false}
+                                time={route?.destinationDetail?.time}
+                                address={route?.destinationDetail?.address?.url}
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className='w-full flex justify-between'>
+                    <AddressGoogleMap address={route?.originDetail?.address?.url} />
+                    <AddressGoogleMap address={route?.originDetail?.address?.url} />
+                </div>
+            </div>
+        </div>
+    )
+}

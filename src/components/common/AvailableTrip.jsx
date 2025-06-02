@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 
 import {
     Bus,
+    MapPin,
     MapPinCheckInside,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -29,6 +30,10 @@ import PaymentFailedPopup from '../features/payments/PaymentFailedPopup';
 import { Checkbox } from '@heroui/react';
 import Link from 'next/link';
 import { showToast } from '../features/toast/ToastMessage';
+import AddressGoogleMap from './AddressGoogleMap';
+import RouteDetailComponent from './RouteDetailComponent';
+import RoundTripBillDetail from './RoundTripBillDetail';
+import DepartureTripBillDetail from './DepartureTripBillDetail';
 
 
 export const AvailableTripItems = ({
@@ -763,10 +768,10 @@ export const AvailableTripItems = ({
         );
     } else if (activeStep === "seat") {
         return (
-            <div className='w-full'>
+            <div className='w-full '>
                 <BookProgress activeStep={activeStep} />
-                <div className="grid md:grid-cols-3 gap-8  w-full" id="select_seat">
-                    <div className="flex flex-col w-full">
+                <div className="grid max-sm:grid-cols-1 md:grid-cols-3 gap-8 w-full" id="select_seat">
+                    <div className="flex flex-col w-full ">
                         <div className="p-6 shadow-custom rounded-lg md:col-span-1">
                             <SeatLayout
                                 busType={routeSelected?.bus_type}
@@ -789,51 +794,9 @@ export const AvailableTripItems = ({
                     </div>
 
                     {/* go trip */}
-                    <div className="mt-8 md:mt-0 space-y-6 md:col-span-2">
-                        <div className="p-6 shadow-custom rounded-lg">
-                            <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-xl font-semibold">Departure Trip Details</h2>
-                                    <div className="flex justify-between items-start mt-2">
-                                        <span className="font-bold">{routeSelected?.bus_type}</span>
-                                        <span className="text-pink-600 font-bold">
-                                            Seat Number: [ {selectedSeat?.map((item, index) => (<span key={index}>{item?.seat} , </span>)) || "-"} ]
-                                        </span>
-                                    </div>
-                                    <FacilityAvailable facilities={routeSelected?.facilities} />
-                                </div>
-                                <div className="space-y-4">
-                                    <div className="flex justify-between items-start">
-                                        <RouteInfor
-                                            city={routeSelected?.originDetail?.city?.city_name}
-                                            departure_date={routeSelected?.originDetail?.leaveAt}
-                                            isStart={true}
-                                            time={routeSelected?.timing?.meta_value}
-                                            routeId={routeSelected?.id}
-                                            address={routeSelected?.originDetail?.address?.url}
-                                        />
-                                        <Bus className="w-5 h-5 mt-8 text-secondary ml-6 mr-6 " />
-                                        <div className="flex-1 px-4 relative">
-                                            <div className="text-center mt-6 text-sm text-gray-500">
-                                                {routeSelected?.duration}
-                                            </div>
-                                            <div className="absolute inset-x-0 top-11 border-t border-gray-300"></div>
-                                            <div className="text-center text-sm text-gray-500">
-                                                {routeSelected?.kilo_meters} KM
-                                            </div>
-                                        </div>
-                                        <MapPinCheckInside className="w-5 mt-8 h-5 text-secondary ml-6 mr-6" />
-                                        <RouteInfor
-                                            city={routeSelected?.destinationDetail?.city?.city_name}
-                                            routeId={routeSelected?.id}
-                                            departure_date={routeSelected?.destinationDetail?.arriveAt}
-                                            isStart={false}
-                                            time={routeSelected?.destinationDetail?.time}
-                                            address={routeSelected?.destinationDetail?.address?.url}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="mt-8 md:mt-0 space-y-6 max-sm:col-span-1 md:col-span-2">
+                        <div className="max-sm:p-2 p-6 shadow-custom rounded-lg">
+                            <RouteDetailComponent selectedSeat={selectedSeat} route={routeSelected} />
                         </div>
 
                         {/* return trip */}
@@ -841,97 +804,27 @@ export const AvailableTripItems = ({
                             tripType == 'round-trip' ?
                                 <div className="mt-8 md:mt-0 space-y-6 md:col-span-2">
                                     <div className="p-6 shadow-custom rounded-lg">
-                                        <div className="space-y-6">
-                                            <div>
-                                                <h2 className="text-xl font-semibold">Return Trip Details</h2>
-
-                                                <div className="flex justify-between items-start">
-                                                    <span className="font-bold">{routeReturnSelected?.bus_type}</span>
-                                                    <span className="text-pink-600 font-bold">
-                                                        Seat Number: [ {selectedSeatReturn?.map((item, index) => (<span key={index}>{item?.seat} , </span>)) || "-"} ]
-                                                    </span>
-                                                </div>
-                                                <FacilityAvailable facilities={routeReturnSelected?.facilities} />
-                                            </div>
-                                            <div className="space-y-4">
-                                                <div className="flex justify-between items-start">
-                                                    <RouteInfor
-                                                        city={routeReturnSelected?.originDetail?.city?.city_name}
-                                                        departure_date={routeReturnSelected?.originDetail?.leaveAt}
-                                                        isStart={true}
-                                                        time={routeReturnSelected?.timing?.meta_value}
-                                                        routeId={routeReturnSelected?.id}
-                                                        address={routeReturnSelected?.originDetail?.address?.url}
-                                                    />
-
-                                                    <Bus className="w-5 h-5 mt-8 text-secondary ml-6 mr-6 " />
-                                                    <div className="flex-1 px-4 relative">
-                                                        <div className="text-center mt-6 text-sm text-gray-500">
-                                                            {routeReturnSelected?.duration}
-                                                        </div>
-                                                        <div className="absolute inset-x-0 top-11 border-t border-gray-300"></div>
-                                                        <div className="text-center text-sm text-gray-500">
-                                                            {routeReturnSelected?.kilo_meters} KM
-                                                        </div>
-                                                    </div>
-                                                    <MapPinCheckInside className="w-5 mt-8 h-5 text-secondary ml-6 mr-6" />
-                                                    <RouteInfor
-                                                        city={routeReturnSelected?.destinationDetail?.city?.city_name}
-                                                        routeId={routeReturnSelected?.id}
-                                                        departure_date={routeReturnSelected?.destinationDetail?.arriveAt}
-                                                        isStart={false}
-                                                        time={routeReturnSelected?.destinationDetail?.time}
-                                                        address={routeReturnSelected?.destinationDetail?.address?.url}
-
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <RouteDetailComponent
+                                            selectedSeat={selectedSeatReturn}
+                                            route={routeReturnSelected}
+                                        />
                                     </div>
                                 </div> : <></>
                         }
 
                         {
-                            tripType == 'round-trip' ? <div className="bg-white rounded-md p-6 shadow-custom2">
-                                <h2 className="text-xl font-semibold mb-4">Bill details</h2>
-                                <div className="space-y-3">
-                                    <div className="flex justify-between">
-                                        <span className="text-gray-600">Departure Base Ticket Fare</span>
-                                        <span>${routeSelected?.price}</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-gray-600">Return Base Ticket Fare</span>
-                                        <span>${routeReturnSelected?.price}</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-gray-600">Total Travellers</span>
-                                        <span>{selectedSeat?.length + selectedSeatReturn.length}</span>
-                                    </div>
-                                    <div className="flex justify-between font-medium pt-3 border-t">
-                                        <span>Total Charge</span>
-                                        <span>${
-                                            (selectedSeat?.length * (Number(routeSelected?.price))) + (selectedSeatReturn.length * (Number(routeReturnSelected?.price)))
-                                        }
-                                        </span>
-                                    </div>
-                                </div>
-                            </div> : <div className="bg-white rounded-md p-6 shadow-custom2">
-                                <h2 className="text-xl font-semibold mb-4">Bill details</h2>
-                                <div className="space-y-3">
-                                    <div className="flex justify-between">
-                                        <span className="text-gray-600"> Base Ticket Fare </span>
-                                        <span>${routeSelected?.price}</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-gray-600">Total Travellers</span>
-                                        <span>{selectedSeat?.length}</span>
-                                    </div>
-                                    <div className="flex justify-between font-medium pt-3 border-t">
-                                        <span>Total Charge</span>
-                                        <span>${selectedSeat?.length * (Number(routeSelected?.price))}</span>
-                                    </div>
-                                </div>
-                            </div>
+                            tripType == 'round-trip' ? <RoundTripBillDetail
+                                departurePrice={routeSelected?.price}
+                                returnPrice={routeReturnSelected?.price}
+                                totalCharge={
+                                    (selectedSeat?.length * (Number(routeSelected?.price))) + (selectedSeatReturn.length * (Number(routeReturnSelected?.price)))
+                                }
+                                totalTraveller={selectedSeat?.length + selectedSeatReturn.length}
+                            /> : <DepartureTripBillDetail
+                                price={routeSelected?.price}
+                                selectedSeat={selectedSeat?.length}
+                                totalCharge={selectedSeat?.length * (Number(routeSelected?.price))}
+                            />
                         }
 
                         <Button
@@ -983,52 +876,7 @@ export const AvailableTripItems = ({
 
                     <div className="space-y-6 md:col-span-2">
                         <div className="p-6 shadow-custom rounded-lg">
-                            <div className="space-y-6">
-                                <div>
-                                    <h2 className="text-xl font-semibold">Departure Trip Details</h2>
-                                    <div className="flex justify-between items-start mt-2">
-                                        <span className="font-bold">{routeSelected?.bus_type}</span>
-                                        <span className="text-pink-600 font-bold">
-                                            Seat Number: [ {selectedSeat?.map((item, index) => (<span key={index}>{item?.seat} , </span>)) || "-"} ]
-                                        </span>
-                                    </div>
-                                    <FacilityAvailable facilities={routeSelected?.facilities} />
-                                </div>
-                                <div className="space-y-4">
-                                    <div className="flex justify-between items-start">
-
-                                        <RouteInfor
-                                            city={routeSelected?.originDetail?.city?.city_name}
-                                            departure_date={routeSelected?.originDetail?.leaveAt}
-                                            isStart={true}
-                                            time={routeSelected?.timing?.meta_value}
-                                            routeId={routeSelected?.id}
-                                            address={routeSelected?.originDetail?.address?.url}
-                                        />
-                                        <Bus className="w-5 h-5 mt-8 text-secondary ml-6 mr-6 " />
-                                        <div className="flex-1 px-4 relative">
-                                            <div className="text-center mt-6 text-sm text-gray-500">
-                                                {routeSelected?.duration}
-                                            </div>
-                                            <div className="absolute inset-x-0 top-11 border-t border-gray-300"></div>
-                                            <div className="text-center text-sm text-gray-500">
-                                                {routeSelected?.kilo_meters} KM
-                                            </div>
-                                        </div>
-                                        <MapPinCheckInside className="w-5 mt-8 h-5 text-secondary ml-6 mr-6" />
-
-                                        <RouteInfor
-                                            city={routeSelected?.destinationDetail?.city?.city_name}
-                                            departure_date={routeSelected?.destinationDetail?.arriveAt}
-                                            isStart={true}
-                                            time={routeSelected?.destinationDetail?.time}
-                                            routeId={routeSelected?.id}
-                                            address={routeSelected?.destinationDetail?.address?.url}
-
-                                        />
-                                    </div>
-                                </div>
-                            </div>
+                            <RouteDetailComponent route={routeSelected} selectedSeat={selectedSeat} />
                         </div>
 
                         {/* return trip */}
@@ -1036,115 +884,26 @@ export const AvailableTripItems = ({
                             tripType == 'round-trip' ?
                                 <div className="mt-8 md:mt-0 space-y-6 md:col-span-2">
                                     <div className="p-6 shadow-custom rounded-lg">
-                                        <div className="space-y-6">
-                                            <div>
-                                                <h2 className="text-xl font-semibold">Return Trip Details</h2>
-
-                                                <div className="flex justify-between items-start">
-                                                    <span className="font-bold">{routeReturnSelected?.bus_type}</span>
-
-                                                    <span className="text-pink-600 font-bold">
-                                                        Seat Number: [ {selectedSeatReturn?.map((item, index) => (<span key={index}>{item?.seat} , </span>)) || "-"} ]
-                                                    </span>
-                                                </div>
-                                                <FacilityAvailable facilities={routeReturnSelected?.facilities} />
-                                            </div>
-                                            <div className="space-y-4">
-                                                <div className="flex justify-between items-start">
-                                                    <RouteInfor
-                                                        city={routeReturnSelected?.originDetail?.city?.city_name}
-                                                        departure_date={routeReturnSelected?.originDetail?.leaveAt}
-                                                        isStart={true}
-                                                        time={routeReturnSelected?.timing?.meta_value}
-                                                        routeId={routeReturnSelected?.id}
-                                                        address={routeReturnSelected?.originDetail?.address?.url}
-                                                    />
-
-                                                    <Bus className="w-5 h-5 mt-8 text-secondary ml-6 mr-6 " />
-                                                    <div className="flex-1 px-4 relative">
-                                                        <div className="text-center mt-6 text-sm text-gray-500">
-                                                            {routeReturnSelected?.duration}
-                                                        </div>
-                                                        <div className="absolute inset-x-0 top-11 border-t border-gray-300"></div>
-                                                        <div className="text-center text-sm text-gray-500">
-                                                            {routeReturnSelected?.kilo_meters} KM
-                                                        </div>
-                                                    </div>
-                                                    <MapPinCheckInside className="w-5 mt-8 h-5 text-secondary ml-6 mr-6" />
-
-                                                    <RouteInfor
-                                                        city={routeReturnSelected?.destinationDetail?.city?.city_name}
-                                                        departure_date={routeReturnSelected?.destinationDetail?.arriveAt}
-                                                        isStart={true}
-                                                        time={routeReturnSelected?.destinationDetail?.time}
-                                                        routeId={routeReturnSelected?.id}
-                                                        address={routeReturnSelected?.destinationDetail?.address?.url}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <RouteDetailComponent route={routeReturnSelected} selectedSeat={selectedSeatReturn} />
                                     </div>
                                 </div> : <></>
                         }
 
                         {
-                            tripType == 'round-trip' ? <div className="bg-white rounded-md p-6 shadow-custom2">
-                                <h2 className="text-xl font-semibold mb-4">Bill details</h2>
-                                <div className="space-y-3">
-                                    <div className="flex justify-between">
-                                        <span className="text-gray-600">Departure Base Ticket Fare</span>
-                                        <span>${routeSelected?.price}</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-gray-600">Return Base Ticket Fare</span>
-                                        <span>${routeReturnSelected?.price}</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-gray-600">Total Travellers</span>
-                                        <span>{selectedSeat?.length + selectedSeatReturn.length}</span>
-                                    </div>
-
-                                    {
-                                        paymentMethod != "khqr" ? <div className="flex justify-between">
-                                            <span className="text-gray-600">Service Charge</span>
-                                            <span>$ {selectedSeat?.length + selectedSeatReturn.length}</span>
-                                        </div> : <></>
-                                    }
-                                    <div className="flex justify-between font-medium pt-3 border-t">
-                                        <span>Total Charge</span>
-
-                                        {
-                                            paymentMethod != "khqr" ? <span>${(selectedSeat?.length * (Number(routeSelected?.price))) + (selectedSeatReturn.length * (Number(routeReturnSelected?.price)) + (selectedSeat.length + selectedSeatReturn.length))}
-                                            </span> : <span>${(selectedSeat?.length * (Number(routeSelected?.price))) + (selectedSeatReturn.length * (Number(routeReturnSelected?.price)))}</span>
-                                        }
-                                    </div>
-                                </div>
-                            </div> : <div className="bg-white rounded-md p-6 shadow-custom2">
-                                <h2 className="text-xl font-semibold mb-4">Bill details</h2>
-                                <div className="space-y-3">
-                                    <div className="flex justify-between">
-                                        <span className="text-gray-600"> Base Ticket Fare </span>
-                                        <span>${routeSelected?.price}</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-gray-600">Total Travellers</span>
-                                        <span>{selectedSeat?.length}</span>
-                                    </div>
-                                    {
-                                        paymentMethod != "khqr" ? <div className="flex justify-between">
-                                            <span className="text-gray-600">Service Charge</span>
-                                            <span>$ {selectedSeat.length}</span>
-                                        </div> : <></>
-                                    }
-                                    <div className="flex justify-between font-medium pt-3 border-t">
-                                        <span>Total Charge</span>
-                                        {
-                                            paymentMethod != "khqr" ? <span>${(selectedSeat?.length * (Number(routeSelected?.price))) + (selectedSeat.length)}</span> :
-                                                <span>${selectedSeat?.length * (Number(routeSelected?.price))}</span>
-                                        }
-                                    </div>
-                                </div>
-                            </div>
+                            tripType == 'round-trip' ? <RoundTripBillDetail
+                                departurePrice={routeSelected?.price}
+                                returnPrice={routeReturnSelected?.price}
+                                totalCharge={
+                                    (selectedSeat?.length * (Number(routeSelected?.price))) + (selectedSeatReturn.length * (Number(routeReturnSelected?.price)))
+                                }
+                                totalTraveller={selectedSeat?.length + selectedSeatReturn.length}
+                                paymentMethod={paymentMethod}
+                            /> : <DepartureTripBillDetail
+                                price={routeSelected?.price}
+                                selectedSeat={selectedSeat.length}
+                                totalCharge={selectedSeat?.length * (Number(routeSelected?.price))}
+                                paymentMethod={paymentMethod}
+                            />
                         }
 
                         <div className="border-2 border-dashed shadow-custom2 p-6 rounded-md border-pay bg-white">

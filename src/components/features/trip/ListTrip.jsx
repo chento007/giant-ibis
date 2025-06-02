@@ -69,6 +69,8 @@ export default function TripListComponent({
                         />
                     </div>
 
+
+
                     <Bus className="w-5 h-5 text-secondary ml-2" />
                     <div className="flex-1 px-4 relative">
                         <div className="text-center mt-6 text-sm text-gray-500">
