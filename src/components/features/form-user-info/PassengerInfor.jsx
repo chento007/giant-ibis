@@ -320,7 +320,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
 
                     <div>
                         <label className="block text-sm mb-1">
-                            Firstname <span className="text-red-500">*</span>
+                            First name <span className="text-red-500">*</span>
                         </label>
                         <input
                             type="text"
