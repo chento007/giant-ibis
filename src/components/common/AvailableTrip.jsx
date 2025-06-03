@@ -918,23 +918,27 @@ export const AvailableTripItems = ({
                             <h2 className="text-xl font-semibold mb-4">Payment Methods</h2>
                             <div className="space-y-3">
                                 <div
-                                    className={`flex items-center justify-between p-4 rounded-lg border ${paymentMethod === "khqr"
-                                        ? "border-primary"
+                                    className={` flex items-center justify-between p-4 rounded-lg border ${paymentMethod === "khqr"
+                                        ? "border-primary bg-gray-200"
                                         : "border-gray-200"
                                         } cursor-pointer`}
                                     onClick={() => setPaymentMethod("khqr")}
                                 >
-                                    <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-3 ">
                                         <input
                                             type="radio"
                                             checked={paymentMethod === "khqr"}
                                             onChange={() => setPaymentMethod("khqr")}
                                             className="w-4 h-4 text-primary"
                                         />
+                                        <div className='h-full'>
+                                            <img src="/assets/logos/acelida.png" alt="" className='w-[60px] h-[60px] rounded-md object-cover' />
+                                        </div>
                                         <div>
-                                            <div className="font-semibold">KHQR</div>
+                                            <div className="font-semibold text-[18px]">ACLEDA PAY</div>
                                             <div className="text-sm text-Description">
-                                                Scan to pay with any banking app.
+                                                Tap to pay with ACLEDA Bank <br />
+                                                Account, Card and Wallet
                                             </div>
                                         </div>
                                     </div>
@@ -945,7 +949,7 @@ export const AvailableTripItems = ({
 
                                 <div
                                     className={`flex items-center justify-between p-4 rounded-lg border ${paymentMethod === "card"
-                                        ? "border-primary"
+                                        ? "border-primary bg-gray-200"
                                         : "border-gray-200"
                                         } cursor-pointer`}
                                     onClick={() => setPaymentMethod("card")}
@@ -957,12 +961,13 @@ export const AvailableTripItems = ({
                                             onChange={() => setPaymentMethod("card")}
                                             className="w-4 h-4 text-primary"
                                         />
+                                        <div className='h-full'>
+                                            <img src="/assets/logos/acelida.png" alt="" className='w-[60px] h-[60px] rounded-md object-cover' />
+                                        </div>
                                         <div>
-                                            <div className="font-semibold">Credit/Debit Card</div>
+                                            <div className="font-semibold  text-[18px]">Credit/Debit Card</div>
                                             <div className="flex gap-2 mt-1">
-                                                <div className="w-10 h-6 bg-[#1A1F71] rounded" />
-                                                <div className="w-10 h-6 bg-[#FF5F00] rounded" />
-                                                <div className="w-10 h-6 bg-[#00A1DF] rounded" />
+                                                <img src="/assets/logos/credit-debit-card.png" alt="" className='w-full h-[20px] rounded-md object-cover' />
                                             </div>
                                         </div>
                                     </div>

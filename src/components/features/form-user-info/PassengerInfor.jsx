@@ -119,6 +119,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
             if (index === 0) {
                 const raw = passengers[0]?.phoneNumber;
                 const phoneWithPlus = raw.startsWith('+') ? raw : `+${raw}`;
+                console.log(phoneWithPlus);
                 
                 if (!passenger.phoneNumber.trim() || !isValidPhoneNumber(phoneWithPlus)) {
                     error.phoneNumber = 'Phone number is required';

@@ -1,4 +1,4 @@
-import { ACLEDA_BANK_API_CHECK_STATUS, loginId, merchantID, merchantName, password, signature } from "@/constant/constant";
+import { ACLEDA_BANK_API_CHECK_STATUS, giantIbisEmail, loginId, merchantID, merchantName, password, signature } from "@/constant/constant";
 import { confirmBooking, getAddressDetail, getAllBookDetail, getBusList, getCity, getPickUpList, getRouteBus, getRouteList, getRouteTiming, printTicket } from "@/services/giantIbisServiceCall";
 import { addHoursToTime, calculateArrival, calculateArrivalTime } from "@/utils/time-util";
 import axios from "axios";
@@ -647,26 +647,10 @@ export class PaymentService {
                 destinationAddress
             });
 
-
             transporter.sendMail({
-                from: 'Giant Ibis <info@giantibis.com>',
-                to: toEmail,
-                subject: 'Giant Ibis E-Ticket',
-                text: 'Please find your e-ticket attached.',
-                html: htmlContent,
-                attachments: [
-                    {
-                        filename: 'e-ticket.pdf',
-                        content: pdfBuffer,
-                        contentType: 'application/pdf',
-                    },
-                ],
-            });
-
-            transporter.sendMail({
-                from: 'Giant Ibis <info@giantibis.com>',
-                to: 'info@giantibis.com',
-                subject: 'Giant Ibis E-Ticket',
+                from: 'Giant Ibis Transport <info@giantibis.com>',
+                to: `${toEmail}, ${giantIbisEmail}`,
+                subject: 'Giant Ibis Transport E-Ticket',
                 text: 'Please find your e-ticket attached.',
                 html: htmlContent,
                 attachments: [
@@ -837,7 +821,7 @@ export class PaymentService {
 
             transporter.sendMail({
                 from: 'Giant Ibis <info@giantibis.com>',
-                to: toEmail,
+                to: `${toEmail}, ${giantIbisEmail}`,
                 subject: 'Giant Ibis E-Ticket',
                 text: 'Please find your e-ticket attached.',
                 html: htmlContent,
@@ -850,20 +834,6 @@ export class PaymentService {
                 ],
             });
 
-            transporter.sendMail({
-                from: 'Giant Ibis <info@giantibis.com>',
-                to: 'info@giantibis.com',
-                subject: 'Giant Ibis E-Ticket',
-                text: 'Please find your e-ticket attached.',
-                html: htmlContent,
-                attachments: [
-                    {
-                        filename: 'e-ticket.pdf',
-                        content: pdfBuffer,
-                        contentType: 'application/pdf',
-                    },
-                ],
-            });
 
             console.log('Email sent successfully!');
         } catch (error) {

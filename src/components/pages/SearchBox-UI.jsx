@@ -228,7 +228,7 @@ export default function SearchBookForm() {
                   onClick={handleSearch}
                   disabled={loading || isLoadingCity}
                   className={cn(
-                    'bg-primary w-32 text-center mt-7 hover:bg-primary',
+                    'bg-primary w-32 text-center mt-8 hover:bg-primary',
                     isLoadingCity || loading ? 'cursor-not-allowed' : ''
                   )}
                 >

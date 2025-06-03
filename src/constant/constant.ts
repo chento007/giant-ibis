@@ -6,6 +6,7 @@ export const ACLEDA_BANK_API_CHECK_STATUS = process.env.ACLEDA_BANK_API_CHECK_ST
 
 // send mail
 export const fromMail = "info@giantibis.com";
+export const giantIbisEmail = "info@giantibis.com";
 
 
 

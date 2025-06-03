@@ -38,7 +38,7 @@ export default function ScheduleComponent() {
                     const contentBlock = (
                       <div className="shadow-custom p-8 rounded-md bg-white">
                         <h3 className="font-semibold mb-2">{item.title}</h3>
-                        <p className="text-sm text-gray-600">{item.content}</p>
+                        <p className="text-sm text-gray-600 break-all w-full">{item.content}</p>
                       </div>
                     )
 
@@ -57,7 +57,7 @@ export default function ScheduleComponent() {
                         <div className={`hidden md:block w-1/2 ${item.position === "right" ? "pl-8" : "pr-8"}`}>
                           {item.position === "right" && contentBlock}
                         </div>
-                        <div className="md:hidden w-full pl-4">{contentBlock}</div>
+                        <div className="md:hidden w-full pl-4 break-words">{contentBlock}</div>
                       </div>
                     )
                   })}

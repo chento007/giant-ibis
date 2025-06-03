@@ -7,6 +7,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import QRCode from "react-qr-code";
 import { useEffect, useState } from "react";
 import RouteDetailSuccessComponent from "../common/RouteDetailSuccess";
+import { CLIENT_URL } from "@/constant/constant";
 
 export default function TicketConfirmation({
   book
@@ -88,45 +89,7 @@ export default function TicketConfirmation({
             </div>
           </div>
         </div>
-        <div className="  p-4 sm:p-6 justify-center flex flex-col items-center">
-          <div className="relative mb-6">
-
-            <div className="w-36 h-36 sm:w-48 sm:h-48 object-contain">
-              {
-                fullUrl ? <QRCode
-                  size={256}
-                  style={{ height: "100%", maxWidth: "100%", width: "100%" }}
-                  value={fullUrl}
-                  viewBox={`0 0 256 256`}
-                /> : <></>
-              }
-            </div>
-
-
-          </div>
-
-          <p className="text-gray-500 text-sm text-center mb-6">
-            Scan the code to view in any device
-          </p>
-
-          <div className="w-full space-y-3">
-            <Button
-              variant="outline"
-              className="w-full h-11 border border-primary text-primary "
-            >
-              Print ticket
-            </Button>
-            <Button className="w-full h-11 bg-primary hover:bg-primary text-white">
-              Book Another Ticket
-            </Button>
-            <Button
-              variant="outline"
-              className="w-full h-11  bg-primary text-white hover:bg-primary"
-            >
-              Download Ticket
-            </Button>
-          </div>
-        </div>
+   
       </div>
     </div>
   );
