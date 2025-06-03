@@ -4,19 +4,10 @@ import { Bus, MapPin } from 'lucide-react'
 import RouteInfor from '../ui/RouteInfor'
 import AddressGoogleMap from './AddressGoogleMap'
 
-export default function RouteDetailComponent({ route, selectedSeat }) {
+export default function RouteDetailSuccessComponent({ route, selectedSeat }) {
     return (
-        <div className="space-y-6">
-            <div>
-                <h2 className="text-xl font-semibold max-sm:text-[14px]">Departure Trip Details</h2>
-                <div className="flex justify-between items-start mt-2">
-                    <span className="font-bold max-sm:text-[12px]">{route?.bus_type}</span>
-                    <span className="text-pink-600 font-bold max-sm:text-[12px] text-right">
-                        Seat Number: [ {selectedSeat?.map((item, index) => (<span key={index}>{item?.seat} , </span>)) || "-"} ]
-                    </span>
-                </div>
-                <FacilityAvailable facilities={route?.facilities} />
-            </div>
+        <div className="space-y-6 w-full">
+
             <div className="">
                 <div className="flex items-center justify-between">
                     <div>
@@ -24,7 +15,7 @@ export default function RouteDetailComponent({ route, selectedSeat }) {
                             city={route?.originDetail?.city?.city_name}
                             departure_date={route?.originDetail?.leaveAt}
                             isStart={true}
-                            time={route?.timing?.meta_value}
+                            time={route?.originDetail?.time}
                             routeId={route?.id}
                             address={route?.originDetail?.address?.url}
                         />

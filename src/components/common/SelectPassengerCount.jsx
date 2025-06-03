@@ -29,7 +29,7 @@ export default function SelectPassengerCount({ onChange, defaultPassenger = 1, i
 
     const dropdownContent = (
         <div className="p-4 w-52 bg-white border border-gray-200 rounded-md">
-            <div className="mb-2 text-center font-medium">Passengers</div>
+            <div className="mb-2 text-center font-medium">{ passengerCount > 1 ? 'Passengers': 'Passenger' }</div>
             <div className="flex items-center justify-between mb-3">
                 <Button onClick={handleDecrease}>-</Button>
                 <InputNumber
@@ -49,7 +49,7 @@ export default function SelectPassengerCount({ onChange, defaultPassenger = 1, i
                 htmlFor="departureDate"
                 className="block text-sm font-normal pb-1 text-label mb-2"
             >
-                Passengers
+                { passengerCount > 1 ? 'Passengers': 'Passenger' }
             </Label>
             <Dropdown
                 dropdownRender={() => dropdownContent}
@@ -57,7 +57,7 @@ export default function SelectPassengerCount({ onChange, defaultPassenger = 1, i
                 className="bg-white"
             >
                 <div className="cursor-pointer h-10 w-44 border border-gray-200 rounded-md text-center flex justify-center items-center space-x-2 hover:shadow-sm">
-                    <span>{passengerCount} Passengers</span>
+                    <span>{passengerCount} { passengerCount > 1 ? 'Passengers': 'Passenger' }</span>
                     <User size={16} />
                 </div>
             </Dropdown>

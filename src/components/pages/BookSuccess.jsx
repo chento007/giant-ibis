@@ -6,6 +6,7 @@ import FacilityAvailable from "../common/FacilityAvalable";
 import { usePathname, useSearchParams } from "next/navigation";
 import QRCode from "react-qr-code";
 import { useEffect, useState } from "react";
+import RouteDetailSuccessComponent from "../common/RouteDetailSuccess";
 
 export default function TicketConfirmation({
   book
@@ -38,32 +39,13 @@ export default function TicketConfirmation({
               <FacilityAvailable facilities={book?.facilities} />
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-4 mb-8">
-            <RouteInfor
-              city={book?.originDetail?.city?.city_name}
-              departure_date={moment(book?.originDetail?.leaveAt).format('MMMM-DD')}
-              isStart={true}
-              time={book?.originDetail?.time}
-              address={book?.originDetail?.address?.url}
-              routeId={book?.id}
-            />
-            <div className="flex-1 flex flex-col items-center w-full sm:pt-6">
-              <div className="text-sm text-gray-500">{book?.duration}</div>
-              <div className="w-full h-px bg-gray-200 my-2" />
-              <div className="text-sm text-gray-500">{book?.kilo_meters} KM</div>
-            </div>
-            <div className="space-y-1 w-full sm:w-auto">
-              <RouteInfor
-                city={book?.destinationDetail?.city?.city_name}
-                departure_date={moment(book?.destinationDetail?.arriveAt).format('MMMM-DD')}
-                isStart={false}
-                time={book?.destinationDetail?.time}
-                address={book?.destinationDetail?.address?.url}
-                routeId={book?.id}
-              />
 
-            </div>
+          {/* route infor */}
+          <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-4 mb-8 w-full">
+            <RouteDetailSuccessComponent route={book} />
           </div>
+
+          {/*  */}
           <div className="space-y-6">
             {
               book?.pickup ? (<>

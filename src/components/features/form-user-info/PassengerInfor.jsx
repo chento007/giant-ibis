@@ -179,7 +179,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
     const renderPickupLocationSelect = (field, label, passengerIndex = 0) => (
         <div>
             <label className="block text-sm mb-1">
-                {label} <span className="text-red-500">*</span>
+                {label}
             </label>
 
             {
@@ -237,7 +237,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                 Traveller Details ({seatCount} {seatCount === 1 ? 'Passenger' : 'Passengers'})
             </h2>
 
-            <div className="mb-4">
+            <div className="">
                 <Checkbox
                     onChange={handleOneFormToggle}
                     checked={isOneForm}
@@ -294,7 +294,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                             placeholder="example@gmail.com"
                             value={passengers[0]?.email || ''}
                             onChange={(e) => handleChange(0, 'email', e.target.value)}
-                            className="w-full p-3 rounded-md bg-[#F8F7FD] border-none"
+                            className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300"
                         />
                         {errors[0]?.email && (
                             <p className="text-red-500 text-xs mt-1">{errors[0].email}</p>
@@ -328,7 +328,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                             placeholder="John"
                             value={passengers[0]?.firstname || ''}
                             onChange={(e) => handleChange(0, 'firstname', e.target.value)}
-                            className="w-full p-3 rounded-md bg-[#F8F7FD] border-none"
+                            className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300"
                         />
                         {errors[0]?.firstname && (
                             <p className="text-red-500 text-xs mt-1">{errors[0].firstname}</p>
@@ -345,7 +345,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                             placeholder="Doe"
                             value={passengers[0]?.lastname || ''}
                             onChange={(e) => handleChange(0, 'lastname', e.target.value)}
-                            className="w-full p-3 rounded-md bg-[#F8F7FD] border-none"
+                            className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300"
                         />
                         {errors[0]?.lastname && (
                             <p className="text-red-500 text-xs mt-1">{errors[0].lastname}</p>
@@ -355,7 +355,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                 </div>
             ) : (
                 passengers.map((passenger, index) => (
-                    <div key={index} className="space-y-4 border-b pb-4 mb-4 last:border-b-0">
+                    <div key={index} className="space-y-4 border-b pb-4  last:border-b-0">
 
 
                         {index === 0 && (
@@ -398,7 +398,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                                         placeholder="example@gmail.com"
                                         value={passenger.email}
                                         onChange={(e) => handleChange(index, 'email', e.target.value)}
-                                        className="w-full p-3 rounded-md bg-[#F8F7FD] border-none"
+                                        className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300"
                                     />
                                     {errors[index]?.email && (
                                         <p className="text-red-500 text-xs mt-1">{errors[index].email}</p>
@@ -431,7 +431,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                                 placeholder="John"
                                 value={passenger.firstname}
                                 onChange={(e) => handleChange(index, 'firstname', e.target.value)}
-                                className="w-full p-3 rounded-md bg-[#F8F7FD] border-none"
+                                className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300"
                             />
                             {errors[index]?.firstname && (
                                 <p className="text-red-500 text-xs mt-1">{errors[index].firstname}</p>
@@ -448,7 +448,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                                 placeholder="Doe"
                                 value={passenger.lastname}
                                 onChange={(e) => handleChange(index, 'lastname', e.target.value)}
-                                className="w-full p-3 rounded-md bg-[#F8F7FD] border-none"
+                                className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300"
                             />
                             {errors[index]?.lastname && (
                                 <p className="text-red-500 text-xs mt-1">{errors[index].lastname}</p>

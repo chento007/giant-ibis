@@ -191,30 +191,28 @@ export const OneWayTemplate = ({
             <td style="padding: 20px;">
                 <div style="font-weight: 700; font-size: 18px; color: #0057A8; font-family: Poppins, sans-serif;"
                     class="title">Passenger Detail</div>
-                <table style="width: 100%; margin-top: 15px; border-collapse: collapse; border: 1px solid black;"
+
+                <table style="width: 100%; border-collapse: collapse; width: 100%; border-radius: 10px;padding: 10px 0;"
                     class="passenger-table">
-                    <tr>
+                    <tr style="text-align: left; color: #0057A8;">
                         <th
-                            style="padding: 12px 15px; text-align: left; font-weight: 500; font-size: 10px; border: 1px solid black; background-color: #D0E8FF; color: black; font-family: Poppins, sans-serif;">
+                            style="padding: 7px;font-weight: bold;">
                             Name</th>
                         <th
-                            style="padding: 12px 15px; text-align: left; font-weight: 500; font-size: 10px; border: 1px solid black; background-color: #D0E8FF; color: black; font-family: Poppins, sans-serif;">
+                            style="padding: 7px;font-weight: bold;">
                             Phone Number</th>
                         <th
-                            style="padding: 12px 15px; text-align: left; font-weight: 500; font-size: 10px; border: 1px solid black; background-color: #D0E8FF; color: black; font-family: Poppins, sans-serif;">
+                            style="padding: 7px;font-weight: bold;">
                             Email</th>
                     </tr>
                     ${passengers?.map((item, index) =>
         `
                             <tr>
-                                <td
-                                    style="padding: 12px 15px; text-align: left; font-weight: 500; font-size: 10px; border: 1px solid black; background-color: white; color: black; font-family: Poppins, sans-serif;">
+                                <td style="font-size: 11px; padding: 7px; border-bottom: 1px solid rgba(128, 128, 128, 0.619)">
                                     ${item?.username}</td>
-                                <td
-                                    style="padding: 12px 15px; text-align: left; font-weight: 500; font-size: 10px; border: 1px solid black; background-color: white; color: black; font-family: Poppins, sans-serif;">
+                                <td style="font-size: 11px; padding: 7px; border-bottom: 1px solid rgba(128, 128, 128, 0.619)">
                                     ${item?.mobile}</td>
-                                <td
-                                    style="padding: 12px 15px; text-align: left; font-weight: 500; font-size: 10px; border: 1px solid black; background-color: white; color: black; font-family: Poppins, sans-serif;">
+                                <td style="font-size: 11px; padding: 7px; border-bottom: 1px solid rgba(128, 128, 128, 0.619)">
                                     ${item.email}</td>
                             </tr>
                             `).join("")}

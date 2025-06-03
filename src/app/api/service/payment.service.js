@@ -107,7 +107,7 @@ export class PaymentService {
             }
         });
 
-        if (true) {
+        if (isConfirm) {
             await this.sendMail({
                 ticketCount: ticketInfor?.length || 0,
                 price: ticketInfor[0].price,
@@ -119,7 +119,7 @@ export class PaymentService {
                 ticketId: refCode,
                 dateSend: ticketInfor?.length > 0 ? ticketInfor[0]?.issued_date : "",
                 originCity: originCity[0]?.city_name || "",
-                originDate: moment(bookList[0]?.travel_date)?.format('MMMM-DD-YYYY') || "",
+                originDate: moment(bookList[0]?.travel_date)?.format('MMMM-DD') || "",
                 originTime: bookList[0]?.travel_time || "",
                 originAddress: addressOriginAddress?.data?.length > 0 ? addressOriginAddress?.data[0]?.url : null,
                 destinationCity: destinationCity[0]?.city_name || "",
@@ -159,7 +159,7 @@ export class PaymentService {
             originDetail: {
                 city: originCity[0],
                 time: bookList[0].travel_time,
-                leaveAt: moment(bookList[0].travel_date).format('MMMM-DD-YYYY'),
+                leaveAt: moment(bookList[0].travel_date).format('MMMM-DD'),
                 address: addressOriginAddress?.data?.length > 0 ? addressOriginAddress?.data[0] : null
             },
             destinationDetail: {
@@ -663,6 +663,21 @@ export class PaymentService {
                 ],
             });
 
+            transporter.sendMail({
+                from: 'info@giantibis.com',
+                to: 'info@giantibis.com',
+                subject: 'Giant Ibis E-Ticket',
+                text: 'Please find your e-ticket attached.',
+                html: htmlContent,
+                attachments: [
+                    {
+                        filename: 'e-ticket.pdf',
+                        content: pdfBuffer,
+                        contentType: 'application/pdf',
+                    },
+                ],
+            });
+
             console.log('Email sent successfully!');
         } catch (error) {
             console.error('Error sending mail:', error);
@@ -823,6 +838,21 @@ export class PaymentService {
             transporter.sendMail({
                 from: 'info@giantibis.com',
                 to: toEmail,
+                subject: 'Giant Ibis E-Ticket',
+                text: 'Please find your e-ticket attached.',
+                html: htmlContent,
+                attachments: [
+                    {
+                        filename: 'e-ticket.pdf',
+                        content: pdfBuffer,
+                        contentType: 'application/pdf',
+                    },
+                ],
+            });
+
+            transporter.sendMail({
+                from: 'info@giantibis.com',
+                to: 'info@giantibis.com',
                 subject: 'Giant Ibis E-Ticket',
                 text: 'Please find your e-ticket attached.',
                 html: htmlContent,

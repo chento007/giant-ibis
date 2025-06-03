@@ -28,7 +28,7 @@ export default function TripListComponent({
     return (
         <button
             key={index}
-            className={cn('p-6 flex w-full justify-between items-start cursor-pointer hover:shadow-lg transition-shadow border rounded-lg relative',)}
+            className={cn('p-6 max-sm:p-2 flex w-full justify-between items-start cursor-pointer hover:shadow-lg transition-shadow border rounded-lg relative',)}
             onClick={() => {
                 handleTripSelect(trip);
             }}
@@ -36,7 +36,7 @@ export default function TripListComponent({
             <div className="flex-1">
                 <div className="flex items-center justify-between mb-2">
                     <h3 className="text-lg font-medium flex ">
-                        {trip?.bus_type}
+                        <div className='max-sm:text-[15px]'>{trip?.bus_type}</div>
                         <Button
                             size="sm"
                             variant="secondary"
@@ -73,11 +73,11 @@ export default function TripListComponent({
 
                     <Bus className="w-5 h-5 text-secondary ml-2" />
                     <div className="flex-1 px-4 relative">
-                        <div className="text-center mt-6 text-sm text-gray-500">
+                        <div className="text-center mt-6 text-sm text-gray-500 max-sm:text-[12px]">
                             {trip.duration}
                         </div>
                         <div className="absolute  inset-x-0 top-11 border-t  border-red-200"></div>
-                        <div className="text-center text-sm text-gray-500">
+                        <div className="text-center text-sm text-gray-500 max-sm:text-[12px]">
                             {trip?.kilo_meters} KM
                         </div>
                     </div>

@@ -308,6 +308,15 @@ export const AvailableTripItems = ({
                 if (!statusOneTrip) return;
 
                 setActiveStep('pay');
+                setTimeout(() => {
+                    const element = document.getElementById('travellerDetail');
+                    if (element) {
+                        element.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }, 50);
             }
 
             setConfirmLoading(false);
@@ -811,7 +820,6 @@ export const AvailableTripItems = ({
                                     </div>
                                 </div> : <></>
                         }
-
                         {
                             tripType == 'round-trip' ? <RoundTripBillDetail
                                 departurePrice={routeSelected?.price}
@@ -831,7 +839,7 @@ export const AvailableTripItems = ({
                             onClick={handleSeatConfirm}
                             disabled={confirmLoading}
                             className={cn(
-                                'w-full bg-primary hover:bg-primary text-lg py-6',
+                                'w-full bg-primary hover:bg-primary text-lg py-6 max-sm:text-sm',
                                 confirmLoading ? 'cursor-progress' : ''
                             )}
                         >

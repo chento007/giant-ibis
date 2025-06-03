@@ -33,17 +33,17 @@ export const renderBusLayout = (status, seat) => {
             </div>;
         case 'Reserved':
             return <div className="flex flex-col items-center ">
-                <img src="/assets/icons/reserved-seat.png" className='w-8 h-10' alt="" />
+                <img src="/assets/icons/reserved-seat.png" className='w-8 h-[45px]' alt="" />
                 <span className="text-xs font-medium text-black">{seat}</span>
             </div>;
         case 'selected':
             return <div className="flex flex-col items-center ">
-                <img src="/assets/icons/selected-seat.png" className='w-8 h-10' alt="" />
+                <img src="/assets/icons/selected-seat.png" className='w-8 h-[45px]' alt="" />
                 <span className="text-xs font-medium text-black">{seat}</span>
             </div>;
         case 'Booked':
             return <div className="flex flex-col items-center ">
-                <img src="/assets/icons/reserved-seat.png" className='w-8 h-8' alt="" />
+                <img src="/assets/icons/reserved-seat.png" className='w-8 h-[45px]' alt="" />
                 <span className="text-xs font-medium text-black">{seat}</span>
             </div>;
         case 'wc':

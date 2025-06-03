@@ -18,10 +18,10 @@ export default function RouteInfor({
             !isStart ? 'justify-end items-end' : 'justify-start items-start',
         )}>
             <div>
-                <div className={cn('text-lg font-semibold max-sm:text-[13px] text-gray-900', isStart ? 'text-start' : 'text-right')}>
+                <div className={cn('text-lg font-semibold max-sm:text-[14px] text-gray-900', isStart ? 'text-start' : 'text-right')}>
                     {departure_date}
                 </div>
-                <div className={cn('text-lg font-semibold max-sm:text-[14px] text-gray-900 text-start', isStart ? 'text-start' : 'text-right')}>
+                <div className={cn('text-lg font-semibold max-sm:text-[15px] text-gray-900 text-start', isStart ? 'text-start' : 'text-right')}>
                     {time}
                 </div>
                 <div className={cn('text-sm text-gray-500 text-start max-sm:text-[13px]', isStart ? 'text-start' : 'text-right')}>
