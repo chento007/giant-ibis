@@ -649,7 +649,7 @@ export class PaymentService {
 
 
             transporter.sendMail({
-                from: 'info@giantibis.com',
+                from: 'Giant Ibis <info@giantibis.com>',
                 to: toEmail,
                 subject: 'Giant Ibis E-Ticket',
                 text: 'Please find your e-ticket attached.',
@@ -664,7 +664,7 @@ export class PaymentService {
             });
 
             transporter.sendMail({
-                from: 'info@giantibis.com',
+                from: 'Giant Ibis <info@giantibis.com>',
                 to: 'info@giantibis.com',
                 subject: 'Giant Ibis E-Ticket',
                 text: 'Please find your e-ticket attached.',
@@ -836,7 +836,7 @@ export class PaymentService {
 
 
             transporter.sendMail({
-                from: 'info@giantibis.com',
+                from: 'Giant Ibis <info@giantibis.com>',
                 to: toEmail,
                 subject: 'Giant Ibis E-Ticket',
                 text: 'Please find your e-ticket attached.',
@@ -851,7 +851,7 @@ export class PaymentService {
             });
 
             transporter.sendMail({
-                from: 'info@giantibis.com',
+                from: 'Giant Ibis <info@giantibis.com>',
                 to: 'info@giantibis.com',
                 subject: 'Giant Ibis E-Ticket',
                 text: 'Please find your e-ticket attached.',
