@@ -814,6 +814,7 @@ export const AvailableTripItems = ({
                                 <div className="mt-8 md:mt-0 space-y-6 md:col-span-2">
                                     <div className="p-6 shadow-custom rounded-lg">
                                         <RouteDetailComponent
+                                            tripTypeTitle='Return Trip Details'
                                             selectedSeat={selectedSeatReturn}
                                             route={routeReturnSelected}
                                         />
@@ -892,7 +893,7 @@ export const AvailableTripItems = ({
                             tripType == 'round-trip' ?
                                 <div className="mt-8 md:mt-0 space-y-6 md:col-span-2">
                                     <div className="p-6 shadow-custom rounded-lg">
-                                        <RouteDetailComponent route={routeReturnSelected} selectedSeat={selectedSeatReturn} />
+                                        <RouteDetailComponent tripTypeTitle='Return Trip Details' route={routeReturnSelected} selectedSeat={selectedSeatReturn} />
                                     </div>
                                 </div> : <></>
                         }
@@ -918,7 +919,7 @@ export const AvailableTripItems = ({
                             <h2 className="text-xl font-semibold mb-4">Payment Methods</h2>
                             <div className="space-y-3">
                                 <div
-                                    className={` flex items-center justify-between p-4 rounded-lg border ${paymentMethod === "khqr"
+                                    className={` flex items-center justify-between p-4 rounded-lg border-2 ${paymentMethod === "khqr"
                                         ? "border-primary bg-gray-200"
                                         : "border-gray-200"
                                         } cursor-pointer`}
@@ -932,14 +933,7 @@ export const AvailableTripItems = ({
                                             className="w-4 h-4 text-primary"
                                         />
                                         <div className='h-full'>
-                                            <img src="/assets/logos/acelida.png" alt="" className='w-[60px] h-[60px] rounded-md object-cover' />
-                                        </div>
-                                        <div>
-                                            <div className="font-semibold text-[18px]">ACLEDA PAY</div>
-                                            <div className="text-sm text-Description">
-                                                Tap to pay with ACLEDA Bank <br />
-                                                Account, Card and Wallet
-                                            </div>
+                                            <img src="/assets/logos/logo-khqr.png" alt="" className='w-full h-[60px] max-sm:h-[46px] rounded-md object-cover max-sm:object-contain' />
                                         </div>
                                     </div>
 
@@ -948,13 +942,13 @@ export const AvailableTripItems = ({
 
 
                                 <div
-                                    className={`flex items-center justify-between p-4 rounded-lg border ${paymentMethod === "card"
+                                    className={`flex items-center justify-between p-4 rounded-lg border-2 ${paymentMethod === "card"
                                         ? "border-primary bg-gray-200"
                                         : "border-gray-200"
                                         } cursor-pointer`}
                                     onClick={() => setPaymentMethod("card")}
                                 >
-                                    <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-3 max-sm:h-[48px]">
                                         <input
                                             type="radio"
                                             checked={paymentMethod === "card"}
@@ -962,12 +956,12 @@ export const AvailableTripItems = ({
                                             className="w-4 h-4 text-primary"
                                         />
                                         <div className='h-full'>
-                                            <img src="/assets/logos/acelida.png" alt="" className='w-[60px] h-[60px] rounded-md object-cover' />
+                                            <img src="/assets/logos/acelida.png" alt="" className='w-[60px] h-[60px] max-sm:h-full rounded-md object-cover' />
                                         </div>
                                         <div>
-                                            <div className="font-semibold  text-[18px]">Credit/Debit Card</div>
+                                            <div className="font-semibold  text-[18px] max-sm:text-[14px]">Credit/Debit Card</div>
                                             <div className="flex gap-2 mt-1">
-                                                <img src="/assets/logos/credit-debit-card.png" alt="" className='w-full h-[20px] rounded-md object-cover' />
+                                                <img src="/assets/logos/credit-debit-card.png" alt="" className='w-full h-[20px]  rounded-md object-cover max-sm:object-contain'  />
                                             </div>
                                         </div>
                                     </div>

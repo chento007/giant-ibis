@@ -18,6 +18,7 @@ import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
 import RouteInfor from '@/components/ui/RouteInfor';
 import FacilityAvailable from '@/components/common/FacilityAvalable';
+import RouteDetailComponent from '@/components/common/RouteDetailComponent';
 export default function TripListComponent({
     handleTripSelect,
     trip,
@@ -33,7 +34,8 @@ export default function TripListComponent({
                 handleTripSelect(trip);
             }}
         >
-            <div className="flex-1">
+            <RouteDetailComponent route={trip} isListTrip />
+            {/* <div className="flex-1">
                 <div className="flex items-center justify-between mb-2">
                     <h3 className="text-lg font-medium flex ">
                         <div className='max-sm:text-[15px]'>{trip?.bus_type}</div>
@@ -94,7 +96,7 @@ export default function TripListComponent({
                         />
                     </div>
                 </div>
-            </div>
+            </div> */}
         </button>
     )
 }
