@@ -93,7 +93,7 @@ const Footer = () => {
                 {
                   name: "+855969993333",
                   src: "/phone.png",
-                  link: "info@giantibis.com",
+                  link: "+855969993333",
                   isTel: true
                 },
               ].map((social) => (
