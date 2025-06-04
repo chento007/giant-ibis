@@ -57,32 +57,49 @@ const Footer = () => {
                 {
                   name: "Facebook",
                   src: "/facebook.svg",
-                  link: "https://facebook.com",
+                  link: "https://fb.me/giantibis",
+                },
+                {
+                  name: "Messenger",
+                  src: "/messenger.png",
+                  link: "https://m.me/giantibis ",
                 },
                 {
                   name: "Instagram",
                   src: "/instagram.svg",
-                  link: "https://instagram.com",
+                  link: "https://www.instagram.com/giantibistransport9999",
                 },
                 {
                   name: "TikTok",
                   src: "/tiktok.svg",
-                  link: "https://tiktok.com",
+                  link: "https://www.tiktok.com/@giantibis_transport",
                 },
                 {
                   name: "Telegram",
                   src: "/telegram.svg",
-                  link: "https://telegram.org",
+                  link: "https://t.me/GiantIbisTransport",
                 },
                 {
                   name: "Whatsapp",
                   src: "/whatsapp.svg",
-                  link: "https://whatsapp.com",
+                  link: "https://wa.me/855969993333",
+                },
+                {
+                  name: "info@giantibis.com",
+                  src: "/email.png",
+                  link: "info@giantibis.com",
+                  isEmail: true
+                },
+                {
+                  name: "+855969993333",
+                  src: "/phone.png",
+                  link: "info@giantibis.com",
+                  isTel: true
                 },
               ].map((social) => (
                 <li key={social.name} className="flex items-center gap-3">
                   <a
-                    href={social.link}
+                    href={social?.isEmail ? `mailto:${social.link}` : social?.isTel ? `tel:${social.link}` : social.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3"
@@ -91,7 +108,7 @@ const Footer = () => {
                       src={social.src}
                       alt={social.name}
                       width={20}
-                      height={20}
+                      height={22}
                     />
                     <span className="text-Description text-sm">
                       {social.name}
@@ -148,7 +165,7 @@ const Footer = () => {
                     tooltip: "Our Branch",
                     href: "/branch",
                   },
-                ].map((item,index) => (
+                ].map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <Link
                       href={item.href}
