@@ -24,21 +24,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import { MdOutlineDateRange } from "react-icons/md";
+import TripAdvisorWidget from "./TripAdvisorWidget";
 
 const Footer = () => {
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src =
-      'https://www.jscache.com/wejs?wtype=excellent&uniq=937&locationId=9604106&lang=en_UK&display_version=2';
-    script.async = true;
-    script.onload = () => (script.loadtrk = true);
 
-    const widgetDiv = document.getElementById('TA_excellent937');
-    if (widgetDiv && !widgetDiv.querySelector('script')) {
-      widgetDiv.appendChild(script);
-    }
-  }, []);
 
   return (
     <footer className="pt-12 bg-white mx-auto w-full">
@@ -240,24 +230,7 @@ const Footer = () => {
                 <div>
 
                   <h3 className="font-semibold mb-4">Trip Advisor</h3>
-                  <div id="TA_excellent937" className="w-[145px] h-[204px] flex justify-start items-start" >
-                    <ul id="kdkGoSmW" className="TA_links nvYOvGpsi">
-                      <li id="ZY0R2C" className="OAiwrjWKy">
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href="https://www.tripadvisor.co.uk/Attraction_Review-g293940-d9604106-Reviews-Giant_Ibis_Transport-Phnom_Penh.html"
-                        >
-                          <img
-                            src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg"
-                            alt="TripAdvisor"
-                            className="widEXCIMG"
-                            id="CDSWIDEXCLOGO"
-                          />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                  <TripAdvisorWidget/>
                 </div>
 
                 <div>
