@@ -16,9 +16,13 @@ import {
   Handshake,
   Cookie,
   ReceiptText,
+  Bus,
+  Newspaper,
+  Earth,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { MdOutlineDateRange } from "react-icons/md";
 
 const Footer = () => {
   return (
@@ -103,38 +107,55 @@ const Footer = () => {
               <ul className="space-y-3 text-Description text-sm">
                 {[
                   {
-                    icon: <BusFront size={20} className="text-primary" />,
-                    label: "Book",
-                    link: "/book",
+                    id: 1,
+                    icon: <BusFront className="iconSVG w-5 h-5 lg:w-[23px] lg:h-[23px] text-primary" />,
+                    tooltip: "Book",
+                    href: "/book",
                   },
                   {
-                    icon: <Globe size={20} className="text-primary" />,
-                    label: "Border Crossing",
-                    link: "/border-crossing",
+                    id: 2,
+                    icon: <Bus className="iconSVG w-5 h-5 lg:w-[23px] lg:h-[23px] text-primary" />,
+                    tooltip: "WHY IBIS",
+                    href: "/why-ibis",
                   },
                   {
-                    icon: <Hotel size={20} className="text-primary" />,
-                    label: "Hotel",
-                    link: "/hotel",
+                    id: 3,
+                    icon: <MdOutlineDateRange className="iconSVG w-5 h-5 lg:w-[23px] lg:h-[23px] text-primary" />,
+                    tooltip: "Schedule",
+                    href: "/schedule",
                   },
                   {
-                    icon: <User size={20} className="text-primary" />,
-                    label: "About Us",
-                    link: "/about-us",
+                    id: 4,
+                    icon: <Hotel className="iconSVG w-5 h-5 lg:w-[23px] lg:h-[23px] text-primary" />,
+                    tooltip: "Hotel",
+                    href: "/hotel",
                   },
                   {
-                    icon: <Split size={20} className="text-primary" />,
-                    label: "Our Branch",
-                    link: "/our-branch",
+                    id: 5,
+                    icon: <Newspaper className="iconSVG w-5 h-5 lg:w-[23px] lg:h-[23px] text-primary" />,
+                    tooltip: "Blog",
+                    href: "/blog",
                   },
-                ].map((item) => (
-                  <li key={item.label} className="flex items-center gap-3">
+                  {
+                    id: 6,
+                    icon: <Earth className="iconSVG w-5 h-5 lg:w-[23px] lg:h-[23px] text-primary" />,
+                    tooltip: "Border Crossing",
+                    href: "/crossing",
+                  },
+                  {
+                    id: 7,
+                    icon: <Split className="iconSVG w-5 h-5 lg:w-[25px] lg:h-[25px] text-primary" />,
+                    tooltip: "Our Branch",
+                    href: "/branch",
+                  },
+                ].map((item,index) => (
+                  <li key={index} className="flex items-center gap-3">
                     <Link
-                      href={item.link}
+                      href={item.href}
                       className="flex items-center gap-3 hover:underline"
                     >
                       {item.icon}
-                      {item.label}
+                      {item.tooltip}
                     </Link>
                   </li>
                 ))}
