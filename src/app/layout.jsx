@@ -84,6 +84,19 @@ export const pageMetadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XK9G3P6D1L"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XK9G3P6D1L');
+            `,
+          }}
+        />
+      </head>
       <body className={cn(poppins.className, 'dark:bg-[#0D001A]')}>
         <LayoutProvider>
           <Banner />
