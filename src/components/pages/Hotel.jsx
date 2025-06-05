@@ -79,10 +79,10 @@ export default function HotelListings() {
                             Get Direction
                           </Link>
                         </div>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-gray-600 text-sm leading-relaxed dark:text-gray-300">
                           {hotel.descripition}
                         </p>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-gray-600 text-sm leading-relaxed dark:text-gray-300">
                           <span className="font-semibold">Address</span>: {hotel?.address}
                         </p>
                       </div>
