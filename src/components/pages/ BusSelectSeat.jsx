@@ -175,11 +175,11 @@ export default function BusBooking() {
           <div className="border-t pt-6  shadow-custom rounded-lg   p-6 space-y-4">
             <h3 className="text-xl font-semibold">Bill details</h3>
             <div className="flex justify-between">
-              <span className="text-gray-600">Base Ticket Fare</span>
+              <span className="text-gray-600 dark:text-gray-400">Base Ticket Fare</span>
               <span className="font-medium">$15</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600">Total Travellers</span>
+              <span className="text-gray-600 dark:text-gray-400">Total Travellers</span>
               <span className="font-medium">3</span>
             </div>
             <div className="flex justify-between text-lg font-semibold">

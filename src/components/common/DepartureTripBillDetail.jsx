@@ -11,7 +11,7 @@ export default function DepartureTripBillDetail({
             <h2 className="text-xl font-semibold mb-4">Bill details</h2>
             <div className="space-y-3">
                 <div className="flex justify-between">
-                    <span className="text-gray-600"> Base Ticket Fare </span>
+                    <span className="text-gray-600 dark:text-gray-400"> Base Ticket Fare </span>
                     <span>${price}</span>
                 </div>
                 <div className="flex justify-between">

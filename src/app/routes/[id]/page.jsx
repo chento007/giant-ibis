@@ -118,11 +118,11 @@ const page = ({id}) => {
                         <h2 className="text-xl font-semibold mb-4">Bill details</h2>
                         <div className="space-y-3">
                             <div className="flex justify-between">
-                                <span className="text-gray-600">Base Ticket Fare</span>
+                                <span className="text-gray-600 dark:text-gray-400">Base Ticket Fare</span>
                                 <span>$15</span>
                             </div>
                             <div className="flex justify-between">
-                                <span className="text-gray-600">Total Travellers</span>
+                                <span className="text-gray-600 dark:text-gray-400">Total Travellers</span>
                                 <span>1</span>
                             </div>
                             <div className="flex justify-between font-medium pt-3 border-t">
