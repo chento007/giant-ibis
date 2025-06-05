@@ -25,7 +25,12 @@ export default function RouteDetailSuccessComponent({ route, selectedSeat }) {
                         <div className="text-center mt-6 text-sm max-sm:text-[10px] text-gray-500">
                             {route?.duration}
                         </div>
-                        <div className="absolute  inset-x-0 top-11 border-t  border-red-200"></div>
+                        <div className="relative w-full flex items-center justify-between top-0">
+                            <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                            <div className="flex-1 border-t border-secondary"></div>
+                            <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                        </div>
+
                         <div className="text-center text-sm max-sm:text-[10px] text-gray-500">
                             {route?.kilo_meters} KM
                         </div>

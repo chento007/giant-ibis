@@ -5,7 +5,7 @@ import Image from "next/image";
 export const Banner = () => {
     return (
         <div className="relative">
-            <div className="relative before:absolute before:inset-0 before:bg-black before:opacity-20">
+            <div className="relative before:absolute before:inset-0 before:bg-black before:opacity-30 dark:before:opacity-60">
                 <Image
                     src="/assets/images/hero2.png"
                     alt="Hero Image"
