@@ -80,7 +80,7 @@ export const sampleTemplate = `<!DOCTYPE html>
         <table class="logo-section" style="width: 100%; border-top: 1px solid #A6A6A6; border-bottom: 1px solid #A6A6A6; margin: 10px 0;">
           <tr>
             <td style="text-align: left;">
-              <img src="https://giantibis.com/img/logo.png" alt="Giant Ibis Logo" width="220" height="70">
+              <img src="https://giantibis.com/img/logo.png" alt="Giant Ibis Logo" style="height: 60px;">
             </td>
             <td style="text-align: right; color: #0057A8; font-weight: bold; font-size: 12px;">
               <div>Your E-TICKET</div>
@@ -116,10 +116,10 @@ export const sampleTemplate = `<!DOCTYPE html>
         <table style="width: 100%; margin-top: 10px;">
           <tr>
             <td>
-              <img style="width: 25px;" src=${getImageUrl("aircon.png")} alt="">
-              <img style="width: 25px;" src=${getImageUrl("aircon.png")} alt="">
-              <img style="width: 25px;" src=${getImageUrl("aircon.png")} alt="">
-              <img style="width: 25px;" src=${getImageUrl("aircon.png")} alt="">
+              <img width=30 height=30 src=${getImageUrl("aircon.png")} alt="">
+              <img width=30 height=30 src=${getImageUrl("aircon.png")} alt="">
+              <img width=30 height=30 src=${getImageUrl("aircon.png")} alt="">
+              <img width=30 height=30 src=${getImageUrl("aircon.png")} alt="">
             </td>
           </tr>
         </table>

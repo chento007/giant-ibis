@@ -112,8 +112,7 @@ export const OneWayTemplate = ({
                     class="logo-section">
                     <tr>
                         <td style="width: 50%; text-align: left;">
-                            <img src="https://giantibis.com/img/logo.png" alt="Giant Ibis Logo"
-                                style="height: 60px; max-width: 100%; display: block; margin: 14px 0;">
+                            <img src="https://giantibis.com/img/logo.png" alt="Giant Ibis Logo" width="220" height="70">
                         </td>
                         <td
                             style="width: 50%; text-align: right; font-weight: bold; color: #0057A8; font-size: 12px; font-family: Poppins, sans-serif;">
@@ -141,19 +140,19 @@ export const OneWayTemplate = ({
                             <table style="width: 100%; margin-top: 10px; border-collapse: collapse;">
                                 <tr>
                                     <td style="font-weight: 600; font-size: 10px; font-family: Poppins, sans-serif;">
-                                        ${facibilities?.airConditioning ? `<img style="width: 25px;" src=${getImageUrl("aircon.png")} alt=""> ` : ""}
-                                        ${facibilities?.wifi ? `<img style="width: 25px;" src=${getImageUrl("Wifi.png")} alt=""> ` : ""}
-                                        ${facibilities?.snack ? `<img style="width: 25px;" src=${getImageUrl("snack-icon.png")} alt=""> ` : ""}
-                                        ${facibilities?.waterBottle ? `<img style="width: 25px;" src=${getImageUrl("water-bottle-icon.png")} alt=""> ` : ""}
-                                        ${facibilities?.wetTowel ? `<img style="width: 25px;" src=${getImageUrl("wet-tower.png")} alt=""> ` : ""}
-                                        ${facibilities?.powerOutlet ? `<img style="width: 25px;" src=${getImageUrl("power-outlet-icon.png")} alt=""> ` : ""}
-                                        ${facibilities?.gps ? `<img style="width: 25px;" src=${getImageUrl("gps.png")} alt=""> ` : ""}
-                                        ${facibilities?.legRoom ? `<img style="width: 25px;" src=${getImageUrl("legroom.png")} alt=""> ` : ""}
-                                        ${facibilities?.seatBelt ? `<img style="width: 25px;" src=${getImageUrl("seat-belt.png")} alt=""> ` : ""}
-                                        ${facibilities?.toilet ? `<img style="width: 25px;" src=${getImageUrl("toilet.png")} alt=""> ` : ""}
-                                        ${facibilities?.tv ? `<img style="width: 25px;" src=${getImageUrl("tv.png")} alt=""> ` : ""}
-                                        ${facibilities?.usbCharger ? `<img style="width: 25px;" src=${getImageUrl("usb-charger-icon.png")} alt=""> ` : ""}
-                                        ${facibilities?.sleepingBed ? `<img style="width: 25px;" src=${getImageUrl("sleeping-bed-icon-orange.png")} alt=""> ` : ""}
+                                        ${facibilities?.airConditioning ? `<img width=30 height=30 src=${getImageUrl("aircon.png")} alt=""> ` : ""}
+                                        ${facibilities?.wifi ? `<img width=30 height=30 src=${getImageUrl("Wifi.png")} alt=""> ` : ""}
+                                        ${facibilities?.snack ? `<img width=30 height=30 src=${getImageUrl("snack-icon.png")} alt=""> ` : ""}
+                                        ${facibilities?.waterBottle ? `<img width=30 height=30 src=${getImageUrl("water-bottle-icon.png")} alt=""> ` : ""}
+                                        ${facibilities?.wetTowel ? `<img width=30 height=30 src=${getImageUrl("wet-tower.png")} alt=""> ` : ""}
+                                        ${facibilities?.powerOutlet ? `<img width=30 height=30 src=${getImageUrl("power-outlet-icon.png")} alt=""> ` : ""}
+                                        ${facibilities?.gps ? `<img width=30 height=30 src=${getImageUrl("gps.png")} alt=""> ` : ""}
+                                        ${facibilities?.legRoom ? `<img width=30 height=30 src=${getImageUrl("legroom.png")} alt=""> ` : ""}
+                                        ${facibilities?.seatBelt ? `<img width=30 height=30 src=${getImageUrl("seat-belt.png")} alt=""> ` : ""}
+                                        ${facibilities?.toilet ? `<img width=30 height=30 src=${getImageUrl("toilet.png")} alt=""> ` : ""}
+                                        ${facibilities?.tv ? `<img width=30 height=30 src=${getImageUrl("tv.png")} alt=""> ` : ""}
+                                        ${facibilities?.usbCharger ? `<img width=30 height=30 src=${getImageUrl("usb-charger-icon.png")} alt=""> ` : ""}
+                                        ${facibilities?.sleepingBed ? `<img width=30 height=30 src=${getImageUrl("sleeping-bed-icon-orange.png")} alt=""> ` : ""}
                                     </td>
 
                                 </tr>
