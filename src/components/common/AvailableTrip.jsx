@@ -933,7 +933,11 @@ export const AvailableTripItems = ({
                                             className="w-4 h-4 text-primary"
                                         />
                                         <div className='h-full'>
-                                            <img src="/assets/logos/logo-khqr.png" alt="" className='w-full h-[60px] max-sm:h-[46px] rounded-md object-cover max-sm:object-contain' />
+                                            <img src="/assets/logos/khqr-logo.png" alt="" className='w-[60px] h-[60px]  rounded-md object-contain' />
+                                        </div>
+                                        <div>
+                                            <div className='text-lg max-sm:text-[14px] font-bold'>ACLEDA Pay and KHQR</div>
+                                            <div className='text-sm max-sm:text-[10px]'>Accept Bank and Wallet Account/KHQR</div>
                                         </div>
                                     </div>
 
@@ -948,7 +952,7 @@ export const AvailableTripItems = ({
                                         } cursor-pointer`}
                                     onClick={() => setPaymentMethod("card")}
                                 >
-                                    <div className="flex items-center gap-3 max-sm:h-[48px]">
+                                    <div className="flex items-center gap-3">
                                         <input
                                             type="radio"
                                             checked={paymentMethod === "card"}
@@ -956,7 +960,7 @@ export const AvailableTripItems = ({
                                             className="w-4 h-4 text-primary"
                                         />
                                         <div className='h-full'>
-                                            <img src="/assets/logos/acelida.png" alt="" className='w-[60px] h-[60px] max-sm:h-full rounded-md object-cover' />
+                                            <img src="/assets/logos/acelida.png" alt="" className='w-[70px] h-[70px] max-sm:h-full rounded-md object-contain' />
                                         </div>
                                         <div>
                                             <div className="font-semibold  text-[18px] max-sm:text-[14px]">Credit/Debit Card</div>
