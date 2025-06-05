@@ -41,7 +41,7 @@ export default function HotelListings() {
   }
 
   return (
-    <div className="bg-mainbg">
+    <div className="bg-mainbg dark:bg-[#0D001A]">
       <div className="px-4 md:px-10 lg:px-20 w-full mx-auto py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
           <div className="relative w-full md:w-80">
@@ -64,12 +64,12 @@ export default function HotelListings() {
             {
               hotels?.data?.length > 0 ? <div>
                 {hotels?.data?.map((hotel, index) => (
-                  <Card key={index} className="p-6 mb-5">
+                  <Card key={index} className="p-6 mb-5 dark:bg-gray-800">
                     <div className="flex flex-col md:flex-row gap-6">
                       <img
                         src={`https://giantibis.com/ibis_admin/${hotel?.image}`}
                         alt={`${hotel.name} logo`}
-                        className="w-full md:w-56 h-56 rounded-md object-contain"
+                        className="w-full md:w-56 h-56 rounded-md object-contain dark:bg-white"
                       />
                       <div className="flex-1">
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">

@@ -74,7 +74,7 @@ export default function BorderCrossings() {
 
   function RouteCollapse({ title, content, isOpen, onClick }) {
     return (
-      <Card className="p-4 shadow-custom2 cursor-pointer transition-colors hover:bg-gray-50" onClick={onClick}>
+      <Card className="p-4 shadow-custom2 cursor-pointer transition-colors hover:bg-gray-50 dark:bg-gray-800" onClick={onClick}>
         <div className="grid grid-cols-3 items-center">
           <div />
           <h3 className="text-center font-medium">{title}</h3>
@@ -132,10 +132,10 @@ export default function BorderCrossings() {
   }
 
   return (
-    <div className="bg-mainbg min-h-screen">
+    <div className="bg-mainbg min-h-screen dark:bg-[#0D001A]">
       <div className="max-w-6xl mx-auto px-4 py-8 lg:pt-12">
-        <h1 className="text-2xl lg:text-3xl font-bold text-Textcolor text-center mb-4">Border Crossings</h1>
-        <p className="text-center text-Description mb-8 lg:mb-12 max-w-2xl mx-auto px-4">
+        <h1 className="text-2xl lg:text-3xl font-bold text-Textcolor text-center mb-4 dark:text-white">Border Crossings</h1>
+        <p className="text-center text-Description mb-8 lg:mb-12 max-w-2xl mx-auto px-4 dark:text-gray-300">
           Crossing borders and getting visas can be tricky, but Giant Ibis makes it easy and stress-free. Our team takes
           care of the details so passengers can relax and have fewer problems at the border.
         </p>

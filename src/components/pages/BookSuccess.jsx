@@ -23,10 +23,10 @@ export default function TicketConfirmation({
   }, [pathname, searchParams]);
 
   return (
-    <div className="bg-mainbg container mx-auto max-w-7xl p-4 sm:p-6">
+    <div className="bg-mainbg container mx-auto max-w-7xl p-4 sm:p-6 dark:bg-[#0D001A]">
 
       <div className="grid lg:grid-cols-[1fr,auto] gap-4 sm:gap-8">
-        <div className="bg-white rounded-xl p-4 sm:p-6 shadow">
+        <div className="bg-white rounded-xl p-4 sm:p-6 shadow dark:bg-gray-800">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
             <div className="space-y-4 w-full">
               <div className="flex items-center justify-between gap-4 w-full ">
@@ -51,7 +51,7 @@ export default function TicketConfirmation({
             {
               book?.pickup ? (<>
                 <div className="flex flex-col sm:flex-row justify-between gap-4">
-                  <div className="text-gray-600">Pick Up At:</div>
+                  <div className="text-gray-600 dark:text-white">Pick Up At:</div>
                   <div className="font-medium sm:text-end">
                     <div>{book?.pickup?.title}</div>
                   </div>
@@ -59,8 +59,8 @@ export default function TicketConfirmation({
             }
 
             <div className="flex flex-col sm:flex-row justify-between gap-4">
-              <div className="text-gray-600">E-Tickets has been sent to:</div>
-              <div className="font-medium sm:text-end">
+              <div className="text-gray-600 dark:text-white">E-Tickets has been sent to:</div>
+              <div className="font-medium sm:text-end dark:text-white">
                 <div>{book?.ticket?.first_name} {book?.ticket?.last_name}</div>
                 <div>{book?.ticket?.email}</div>
               </div>
@@ -69,10 +69,10 @@ export default function TicketConfirmation({
               <div>
                 <h3 className="font-medium mb-3">Traveller Details</h3>
                 <div className="space-y-1">
-                  <div className=""><span className="text-gray-500 pr-5">Phone Number: </span>{book?.ticket?.mobile}</div>
-                  <div><span className="text-gray-500 pr-5">Booking Status: </span> {book?.seat_status}</div>
-                  <div><span className="text-gray-500 pr-5">Price: </span> {book?.price}</div>
-                  <div><span className="text-gray-500 pr-5">Ticket: </span> {book?.ticketCount}</div>
+                  <div className=""><span className="text-gray-500 pr-5 dark:text-white">Phone Number: </span>{book?.ticket?.mobile}</div>
+                  <div><span className="text-gray-500 pr-5 dark:text-white">Booking Status: </span> {book?.seat_status}</div>
+                  <div><span className="text-gray-500 pr-5 dark:text-white">Price: </span> {book?.price}</div>
+                  <div><span className="text-gray-500 pr-5 dark:text-white">Ticket: </span> {book?.ticketCount}</div>
                   {
                     book?.paymentMethod != 'khqr' ? <div><span className="text-gray-500 pr-5">Service Charge: </span>$ {book?.ticketCount}</div> : <></>
                   }
@@ -81,7 +81,7 @@ export default function TicketConfirmation({
             </div>
 
             <div className="flex justify-between items-end pt-4 border-t">
-              <div className="text-gray-600">Total Fare</div>
+              <div className="text-gray-600 dark:text-white">Total Fare</div>
               {
                 book?.paymentMethod != 'khqr' ? <div className="text-xl font-medium">${(Number(book?.price) * book?.ticketCount) + book?.ticketCount}</div> : <div className="text-xl font-medium">${Number(book?.price) * book?.ticketCount}</div>
               }

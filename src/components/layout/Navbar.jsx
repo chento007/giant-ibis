@@ -27,9 +27,9 @@ const Navbar = () => {
 
   const toggleDarkMode = () => {
     if(isDarkMode){
-      setTheme('light')
-    }else{
       setTheme('dark')
+    }else{
+      setTheme('light')
     }
     setIsDarkMode(!isDarkMode);
   };
@@ -102,17 +102,17 @@ const Navbar = () => {
           />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-5 lg:gap-12 bg-white dark:bg-gray-800 backdrop-blur-sm px-4 py-2 rounded-[15px] shadow-custom">
+        <nav className="hidden md:flex items-center gap-5 lg:gap-12 bg-white dark:bg-gray-800 dark:border-white border backdrop-blur-sm px-4 py-2 rounded-[15px] shadow-custom">
           {navIcons.map(({ id, icon, tooltip, href }) => (
             <Link
               key={id}
               href={href}
               className="relative flex items-center gap-2 text-primary hover:text-primary transition-colors group"
             >
-              {icon}
-              <span className="text-center text-sm">{tooltip}</span>
+              <span className="dark:text-white">{icon}</span>
+              <span className="text-center text-sm dark:text-white">{tooltip}</span>
               <span className="hidden">{tooltip}</span>
-              <span className="absolute left-1/2 -translate-x-1/2 -bottom-8 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+              <span className="absolute left-1/2 -translate-x-1/2 -bottom-8 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap dark:text-primary">
                 {tooltip}
               </span>
             </Link>
@@ -162,10 +162,10 @@ const Navbar = () => {
                 key={id}
                 href={href}
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center gap-3 text-primary hover:text-blue-600 transition-colors"
+                className="flex items-center gap-3 text-primary hover:text-blue-600 transition-colors "
               >
                 {icon}
-                <span>{tooltip}</span>
+                <span className="dark:text-white">{tooltip}</span>
               </Link>
             ))}
             <div className="flex items-center gap-4 mt-4">

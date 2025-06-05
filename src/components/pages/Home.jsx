@@ -113,7 +113,7 @@ const Home = () => {
   return (
     <div className="bg-main">
       <div className="w-full max-w-5xl mx-auto py-12 px-4 lg:px-20">
-        <h1 className="text-3xl text-Textcolor font-bold text-center mb-12">
+        <h1 className="text-3xl text-Textcolor font-bold text-center mb-12 dark:text-white">
           Book your tickets in just 3 simple steps!
         </h1>
 
@@ -124,8 +124,8 @@ const Home = () => {
                 <Search size={25} className="text-white" />
               </div>
             </div>
-            <h3 className="text-lg text-primary">Search</h3>
-            <p className="text-sm text-gray-600">
+            <h3 className="text-lg text-primary dark:text-white">Search</h3>
+            <p className="text-sm text-gray-600 ">
               Select your route and travel date.
             </p>
           </div>
@@ -144,7 +144,7 @@ const Home = () => {
                 <RockingChair size={25} className="text-white" />
               </div>
             </div>
-            <h3 className="text-lg text-primary">Select Seat</h3>
+            <h3 className="text-lg text-primary dark:text-white">Select Seat</h3>
             <p className="text-sm text-gray-600">
               Choose your preferred departure time and seat.
             </p>
@@ -154,7 +154,7 @@ const Home = () => {
             <img
               src="/assets/images/arrow1.png"
               alt="Dashed Line"
-              className="w-full max-w-xs mx-auto"
+              className="w-full max-w-xs mx-auto dark:opacity-45"
             />
           </div>
           <div className="text-center flex-1">
@@ -163,7 +163,7 @@ const Home = () => {
                 <CreditCard size={25} className="text-white" />
               </div>
             </div>
-            <h3 className="text-lg  text-primary">Pay</h3>
+            <h3 className="text-lg  text-primary dark:text-white">Pay</h3>
             <p className="text-sm text-gray-600">
               Pay with KHQR, ABA Pay, Visa, MasterCard, or UPI.
             </p>
@@ -173,7 +173,7 @@ const Home = () => {
 
       <div className=" py-10 px-4 md:px-16 lg:px-20">
         <div className="text-center mb-8">
-          <h2 className="text-3xl text-Textcolor font-semibold dark:text-gray-800">
+          <h2 className="text-3xl text-Textcolor font-semibold dark:text-white">
             We Offer Best Services
           </h2>
         </div>
@@ -226,7 +226,7 @@ const Home = () => {
       </div>
 
       <div className="mx-auto px-4 lg:px-20 py-7">
-        <h2 className="text-3xl text-Textcolor font-bold text-center mb-10">
+        <h2 className="text-3xl text-Textcolor font-bold text-center mb-10 dark:text-white">
           Destinations
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[18px]">

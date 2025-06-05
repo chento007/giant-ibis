@@ -11,8 +11,8 @@ export default function QrcodeInvoice({
     isLoading = false
 }) {
     return (
-        <div className='bg-mainbg container mx-auto w-full'>
-            <div className='bg-white w-full rounded-xl p-4 sm:p-6 shadow'>
+        <div className='bg-mainbg container mx-auto w-full dark:bg-[#0D001A]'>
+            <div className='bg-white w-full rounded-xl p-4 sm:p-6 shadow dark:bg-gray-800'>
                 <div className=" p-4 sm:p-6 justify-center flex flex-col items-center">
                     <div className="relative mb-6">
 

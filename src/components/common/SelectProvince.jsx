@@ -18,7 +18,7 @@ export const SelectProvince = ({
 }) => {
     return (
         <div className={cn('w-full', colspan)}>
-            <Label htmlFor="origin" className="block text-sm font-normal pb-1 text-label mb-2">
+            <Label htmlFor="origin" className="block text-sm font-normal pb-1 text-label mb-2 dark:text-white">
                 {title}
             </Label>
 
@@ -38,10 +38,7 @@ export const SelectProvince = ({
                         value={value}
                         placeholder={`Select ${title}`}
                         optionFilterProp="label"
-                        className="w-full h-[39px] text-black custom-select-placeholder"
-                        style={{
-                            color: 'black'
-                        }}
+                        className="w-full h-[39px] custom-select-placeholder dark-mode-select"
                         filterOption={(input, option) =>
                             (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
                         }
@@ -53,6 +50,8 @@ export const SelectProvince = ({
                             })) || []
                         }
                     />
+
+
 
                     {isError && (
                         <span className="text-red-500 mt-3 text-[14px]">

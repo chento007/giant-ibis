@@ -84,10 +84,10 @@ export default function BlogListing() {
 
 
   return (
-    <div className="bg-mainbg">
+    <div className="bg-mainbg dark:bg-[#0D001A]">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-Textcolor mb-2"> No Blogs</h1>
+          <h1 className="text-3xl font-bold text-Textcolor mb-2 dark:text-white"> No Blogs</h1>
         </div>
       </div>
     </div>

@@ -173,12 +173,12 @@ export default function SearchBookForm() {
   return (
     <Suspense fallback={<div>Loading ...</div>}>
 
-      <div className="mb-10 mx-3 lg:mx-auto">
+      <div className="mb-10 mx-3 lg:mx-auto ">
 
         <Toaster />
 
         <div>
-          <div className="max-w-7xl mx-auto mt-12 p-6 bg-white shadow-custom rounded-lg border border-gray-200">
+          <div className="max-w-7xl mx-auto mt-12 p-6 bg-white shadow-custom rounded-lg border border-gray-200 dark:bg-gray-800">
             <TitleFilter />
 
             <div className={cn(

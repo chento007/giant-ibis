@@ -14,7 +14,7 @@ export default function ScheduleComponent() {
 
   function RouteCollapse({ title, content, isOpen, onClick, dataDetails, isEndRoute }) {
     return (
-      <Card className={cn('p-4 shadow-custom2 cursor-pointer transition-colors hover:bg-gray-50',
+      <Card className={cn('p-4 shadow-custom2 cursor-pointer transition-colors hover:bg-gray-50 dark:bg-gray-800',
         isEndRoute ? 'mb-10' : ''
       )} onClick={onClick}>
         <div className="grid grid-cols-4 items-center">
@@ -71,9 +71,9 @@ export default function ScheduleComponent() {
   }
 
   return (
-    <div className="bg-mainbg min-h-screen">
+    <div className="bg-mainbg min-h-screen dark:bg-[#0D001A]">
       <div className="max-w-6xl mx-auto px-4 py-8 lg:pt-2">
-        <h1 className="text-2xl lg:text-3xl font-bold text-Textcolor text-center mb-4">Schedule</h1>
+        <h1 className="text-2xl lg:text-3xl font-bold text-Textcolor text-center mb-4 dark:text-white">Schedule</h1>
 
         <div className="grid gap-3 px-4">
           {routeItems.map((route, index) => (

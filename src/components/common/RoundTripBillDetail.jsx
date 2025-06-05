@@ -8,19 +8,19 @@ export default function RoundTripBillDetail({
     paymentMethod = 'khqr'
 }) {
     return (
-        <div className="bg-white rounded-md p-6 shadow-custom2">
+        <div className="bg-white rounded-md p-6 shadow-custom2 dark:bg-gray-800">
             <h2 className="text-xl font-semibold mb-4">Bill details</h2>
             <div className="space-y-3">
                 <div className="flex justify-between">
-                    <span className="text-gray-600">Departure Base Ticket Fare</span>
+                    <span className="text-gray-600 dark:text-gray-300">Departure Base Ticket Fare</span>
                     <span>${departurePrice}</span>
                 </div>
                 <div className="flex justify-between">
-                    <span className="text-gray-600">Return Base Ticket Fare</span>
+                    <span className="text-gray-600 dark:text-gray-300">Return Base Ticket Fare</span>
                     <span>${returnPrice}</span>
                 </div>
                 <div className="flex justify-between">
-                    <span className="text-gray-600">Total Travellers</span>
+                    <span className="text-gray-600 dark:text-gray-300">Total Travellers</span>
                     <span>{totalTraveller}</span>
                 </div>
                 {

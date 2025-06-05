@@ -51,7 +51,7 @@ export default function SuccessPage({ params }) {
   const fullUrl = `${CLIENT_URL}/api/tickets/round-trip?refCode=${id}&&refCodeRoundTrip=${two}&invoiceId=${_paymenttokenid}&preview=true`;
 
   return (
-    <div className="bg-mainbg container mx-auto max-w-7xl p-4 sm:p-6">
+    <div className="bg-mainbg container mx-auto max-w-7xl p-4 sm:p-6 dark:bg-[#0D001A]">
       <SuccessTitleSecsion />
       <div className="grid lg:grid-cols-[1fr,auto] gap-2">
         <div className="w-full">

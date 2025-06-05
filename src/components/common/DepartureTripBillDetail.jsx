@@ -7,7 +7,7 @@ export default function DepartureTripBillDetail({
     paymentMethod = 'khqr'
 }) {
     return (
-        <div className="bg-white rounded-md p-6 shadow-custom2">
+        <div className="bg-white rounded-md p-6 shadow-custom2 dark:bg-gray-800">
             <h2 className="text-xl font-semibold mb-4">Bill details</h2>
             <div className="space-y-3">
                 <div className="flex justify-between">
@@ -15,12 +15,12 @@ export default function DepartureTripBillDetail({
                     <span>${price}</span>
                 </div>
                 <div className="flex justify-between">
-                    <span className="text-gray-600">Total Travellers</span>
+                    <span className="text-gray-600 dark:text-gray-400">Total Travellers</span>
                     <span>{selectedSeat}</span>
                 </div>
                 {
                     paymentMethod != "khqr" ? <div className="flex justify-between">
-                        <span className="text-gray-600">Service Charge</span>
+                        <span className="text-gray-600 dark:text-gray-400">Service Charge</span>
                         <span>$ {selectedSeat}</span>
                     </div> : <></>
                 }

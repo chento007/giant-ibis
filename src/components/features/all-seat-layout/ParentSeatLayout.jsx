@@ -38,7 +38,7 @@ export default function ParentSeatLayout({
             {
                 seatData ? (
                     <div className='w-full'>
-                        <div className="text-black text-center mb-5 text-sm">Vechicle Type: {busType}</div>
+                        <div className="text-black text-center mb-5 text-sm dark:text-white">Vechicle Type: {busType}</div>
                         <div className={cn(`grid max-sm:ml-0 ml-8 gap-2`, colMapping[seatData?.col] || 'grid-cols-2')}>
                             {
                                 busType === "Sleeper Bus" ? <BunkComponent colSpan={Colspan[seatData.col]} title={"Bottom Bunk"} /> : <></>

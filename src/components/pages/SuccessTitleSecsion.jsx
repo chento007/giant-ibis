@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function SuccessTitleSecsion() {
     return (
-        <div className="bg-mainbg container mx-auto max-w-7xl p-4 sm:p-6">
+        <div className="bg-mainbg container mx-auto max-w-7xl p-4 sm:p-6 dark:bg-[#0D001A]">
             <div className="text-center mt-5">
                 <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#67B467] mb-4">
                     <Check className="w-6 h-6 sm:w-8 sm:h-8 text-white" />

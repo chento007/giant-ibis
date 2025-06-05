@@ -16,7 +16,7 @@ export const BookProgress = ({activeStep}) => {
                 >
                     <Bus className="w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
-                <span className="text-xs sm:text-sm  text-Textcolor">Select</span>
+                <span className="text-xs sm:text-sm  text-Textcolor dark:text-gray-400">Select</span>
             </div>
             <div className="w-36 h-[2px] bg-gray-200 hidden sm:block" />
 
@@ -29,7 +29,7 @@ export const BookProgress = ({activeStep}) => {
                 >
                     <Armchair className="w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
-                <span className="text-xs sm:text-sm text-Textcolor">Select Seat</span>
+                <span className="text-xs sm:text-sm text-Textcolor dark:text-gray-400">Select Seat</span>
             </div>
             <div className="w-36 h-[2px] bg-gray-200 hidden sm:block" />
             <div className="flex flex-col items-center gap-2 m-2">
@@ -41,7 +41,7 @@ export const BookProgress = ({activeStep}) => {
                 >
                     <CreditCard className="w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
-                <span className="text-xs sm:text-sm text-Textcolor">Pay</span>
+                <span className="text-xs sm:text-sm text-Textcolor dark:text-gray-400">Pay</span>
             </div>
         </div>
     );

@@ -1,7 +1,106 @@
-.custom-select-placeholder .ant-select-selection-placeholder {
-    color: black !important;
+/* Light mode base styles */
+.custom-select-placeholder-1.ant-select-selector {
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 
-.custom-select-placeholder {
-    font-family: 'Poppins';
+.custom-select-placeholder-1.ant-select-selection-placeholder {
+  color: #000000 !important;
+}
+
+.custom-select-placeholder-1{
+  font-family: 'Poppins';
+}
+
+.dark .custom-select-placeholder-1 .ant-select-selection-placeholder {
+  color: #FFFFFF; /* Tailwind's text-gray-300 */
+}
+
+.dark .custom-select-placeholder-1 .ant-select-selector,
+.dark .custom-select-placeholder-1.ant-select-focused .ant-select-selector  {
+  border-color: #ffffff !important; /* white border */
+}
+
+.dark .custom-select-placeholder-1 .ant-select-selector:hover,
+.dark .custom-select-placeholder-1 .ant-select-selector:focus,
+.dark .custom-select-placeholder-1 .ant-select-focused .ant-select-selector {
+  border-color: #ffffff !important;
+}
+
+
+
+/* ==== DARK MODE OVERRIDES ==== */
+
+.dark .custom-select-placeholder-1.ant-select-selector {
+  background-color: #2F3D53  !important;
+  border-color: white !important;
+  color: #ffffff !important;
+}
+
+.dark .dark-mode-select-1 .ant-select-selector {
+  background-color: #2F3D53 !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF;
+}
+
+.dark .dark-mode-select-1 .ant-select-selector {
+  background-color: #2F3D53 !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+
+.dark .custom-select-placeholder-1.ant-select-selection-placeholder {
+  color: #FFFFFF !important;
+}
+
+.dark .custom-select-placeholder-1.ant-select-selection-item {
+  color: #ffffff !important;
+}
+
+/* Dropdown icon color */
+.dark .custom-select-placeholder-1.ant-select-arrow {
+  color: #ffffff !important;
+}
+
+
+
+/*  */
+
+/* Base input styling */
+.react-tel-input .form-control {
+  background-color: #E8F0FE !important;
+  color: black !important;
+  height: 45px !important;
+}
+
+/* Country dropdown list */
+.react-tel-input .country-list {
+  background-color: white !important;
+  color: black !important;
+}
+
+/* ==== DARK MODE ==== */
+.dark .react-tel-input .form-control {
+  background-color: #2F3D53 !important;
+  color: #ffffff !important;
+  border-color: #FFFFFF !important;
+}
+
+.dark .react-tel-input .form-control::placeholder {
+  color: #cccccc !important;
+}
+
+.dark .react-tel-input .flag-dropdown {
+  background-color: #2A2A2A !important;
+}
+
+.dark .react-tel-input .country-list {
+  background-color: #1F1F1F !important;
+  color: #ffffff !important;
+  border-color: #444 !important;
+}
+
+.dark .react-tel-input .country-list .country:hover {
+  background-color: #333333 !important;
 }

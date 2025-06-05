@@ -20,7 +20,7 @@ const TripAdvisorWidget = () => {
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.tripadvisor.co.uk/Attraction_Review-g293940-d9604106-Reviews-Giant_Ibis_Transport-Phnom_Penh.html"
-            className="bg-white border-2 rounded-md border-[#00a568] flex flex-col justify-center items-center w-[210px]">
+            className="bg-white dark:bg-gray-800 border-2 rounded-md border-[#00a568] flex flex-col justify-center items-center w-[160px] ">
             <div className="font-bold text-center w-full bg-[#00a568] p-2">
                 Bravo!
             </div>

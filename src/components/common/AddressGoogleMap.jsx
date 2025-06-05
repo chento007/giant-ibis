@@ -17,7 +17,7 @@ export default function AddressGoogleMap({
                     )}
                     aria-label="View location on map"
                 >
-                    <div className='text-black max-sm:text-[12px] text-[16px]'>Get Direction</div><MapPinCheck className='tex-[12px] max-sm:text-[12px] max-sm:w-[30px] text-secondary' />
+                    <div className='text-black max-sm:text-[12px] text-[16px] dark:text-white'>Get Direction</div><MapPinCheck className='tex-[12px] max-sm:text-[12px] max-sm:w-[30px] text-secondary' />
                 </a>
             )}
         </div>

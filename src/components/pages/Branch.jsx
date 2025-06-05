@@ -66,9 +66,9 @@ export default function Branch() {
   return (
     <>
       <div clakForm />
-      <div className="bg-mainbg max-w-7xl mx-auto px-4 py-12">
+      <div className="bg-mainbg dark:bg-[#0D001A] max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white shadow-custom rounded-lg p-7">
+          <div className="bg-white shadow-custom rounded-lg p-7 dark:bg-gray-800">
             {/* <div className="relative mb-6">
               <input
                 type="text"
@@ -80,8 +80,8 @@ export default function Branch() {
 
             <div className="space-y-6 ">
               {locations.map((location, index) => (
-                <div key={index} className="border-b pb-6">
-                  <h3 className="text-lg font-semibold text-gray-900">
+                <div key={index} className="border-b pb-6 ">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                     {location.name}
                   </h3>
                   <p className="text-gray-500 text-sm mb-2">
@@ -95,7 +95,7 @@ export default function Branch() {
                     <Link
                       href={location.link}
                       target="_blank"
-                      className="flex items-center hover:underline"
+                      className="flex items-center hover:underline dark:text-gray-300"
                     >
                       <MapPin className="w-4 h-4 text-secondary mr-1" />
                       Get Directions

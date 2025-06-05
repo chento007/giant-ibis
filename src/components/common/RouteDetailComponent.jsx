@@ -7,7 +7,7 @@ import { Button } from '../ui/button'
 
 export default function RouteDetailComponent({ route, selectedSeat = [], isListTrip = false, tripTypeTitle = "Departure Trip Details" }) {
     return (
-        <div className="space-y-6 w-full">
+        <div className="space-y-6 w-full ">
             {
                 !isListTrip ? <div>
                     <h2 className="text-xl font-semibold max-sm:text-[14px]">{tripTypeTitle}</h2>
@@ -25,7 +25,7 @@ export default function RouteDetailComponent({ route, selectedSeat = [], isListT
                             <Button
                                 size="sm"
                                 variant="secondary"
-                                className="bg-primary ml-2 text-white hover:bg-blue-700"
+                                className="bg-primary ml-2 text-white hover:bg-blue-700 dark:bg-primary"
                             >
                                 ${route?.price}
                             </Button>

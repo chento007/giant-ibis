@@ -51,9 +51,9 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="bg-blue-50 py-16 px-4 relative">
+    <div className="bg-blue-50 py-16 px-4 relative dark:bg-gray-800">
       <div className="max-w-7xl mx-auto relative">
-        <h2 className="text-3xl font-bold text-Textcolor text-center mb-12">
+        <h2 className="text-3xl font-bold text-Textcolor text-center mb-12 dark:text-white">
           See What Our Clients Say About Us
         </h2>
 
@@ -71,14 +71,14 @@ const Testimonials = () => {
                   className="md:basis-1/2 lg:basis-1/3 "
                 >
                   <div className="p-1">
-                    <Card className="dark:bg-gray-800">
+                    <Card className="dark:bg-[#0D001A]">
                       <CardContent className="flex flex-col justify-between p-6">
                         <div className="flex justify-between items-start mb-4">
                           <div>
-                            <h3 className="font-semibold text-gray-800">
+                            <h3 className="font-semibold text-gray-800 dark:text-white">
                               {testimonial.name}
                             </h3>
-                            <p className="text-sm text-Description">
+                            <p className="text-sm text-Description dark:text-gray-400">
                               {testimonial.date}
                             </p>
                           </div>
@@ -88,7 +88,7 @@ const Testimonials = () => {
                             ))}
                           </div>
                         </div>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-gray-600 text-sm leading-relaxed dark:text-gray-400">
                           {testimonial.text}
                         </p>
                       </CardContent>

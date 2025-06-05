@@ -120,7 +120,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                 const raw = passengers[0]?.phoneNumber;
                 const phoneWithPlus = raw.startsWith('+') ? raw : `+${raw}`;
                 console.log(phoneWithPlus);
-                
+
                 if (!passenger.phoneNumber.trim() || !isValidPhoneNumber(phoneWithPlus)) {
                     error.phoneNumber = 'Phone number is required';
                     isValid = false;
@@ -191,7 +191,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                         optionFilterProp="label"
                         onClick={handleShowNotificationOnece}
                         allowClear
-                        className="w-full h-[43px] custom-select-placeholder"
+                        className="w-full h-[43px] custom-select-placeholder-1 dark:bg-gray-800 dark:text-white dark:border-white custom-select-placeholder \ custom-select-placeholder dark-mode-select-1"
                         filterOption={(input, option) =>
                             (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
                         }
@@ -210,7 +210,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                         placeholder={`${label}`}
                         onClick={handleShowNotificationOnece}
                         optionFilterProp="label"
-                        className="w-full h-[43px] custom-select-placeholder"
+                        className="w-full h-[43px] custom-select-placeholder-1 dark:bg-gray-800 dark:text-white custom-select-placeholder dark-mode-select-1"
                         filterOption={(input, option) =>
                             (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
                         }
@@ -231,7 +231,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
     );
 
     return (
-        <div className="space-y-6 shadow-custom2 p-6 rounded-md">
+        <div className="space-y-6 shadow-custom2 p-6 rounded-md dark:bg-gray-800">
             <NotificationPopup ref={notificationRef} />
 
             <h2 className="text-xl font-semibold mb-4" id="travellerDetail">
@@ -242,7 +242,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                 <Checkbox
                     onChange={handleOneFormToggle}
                     checked={isOneForm}
-                    className='text-medium font-semibold underline'
+                    className='text-medium font-semibold underline dark:text-white'
                 >
                     Use same details for all passengers
                 </Checkbox>
@@ -263,23 +263,18 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
 
                         <PhoneInput
                             country={'kh'}
-
                             value={passengers[0]?.phoneNumber || ''}
-                            onChange={(value) => {
-                                console.log("phone number: ", value);
-                                handleChange(0, 'phoneNumber', value)
-                            }}
-                            inputProps={{
-                                required: true,
-                            }}
-                            inputClass="!w-full !py-4 !pl-16 !text-base !border border-gray-300 !rounded-md"
-                            buttonClass="!border-r border-gray-300 !px-2"
+                            onChange={(value) => handleChange(0, 'phoneNumber', value)}
+                            inputProps={{ required: true }}
+                            inputClass="!w-full !py-4 !pl-16 !text-base !border !rounded-md"
+                            buttonClass="!border-r !px-2"
                             containerClass="!w-full"
-                            dropdownClass="!text-black !max-h-60 overflow-y-auto"
-                            searchClass="!border !border-gray-300 !rounded-md !px-2 !py-1 !my-2"
+                            dropdownClass="!max-h-60 overflow-y-auto"
+                            searchClass="!border !rounded-md !px-2 !py-1 !my-2"
                             countryCodeEditable={false}
                             enableSearch={true}
                         />
+
                         {errors[0]?.phoneNumber && (
                             <p className="text-red-500 text-xs mt-1">{errors[0].phoneNumber}</p>
                         )}
@@ -295,7 +290,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                             placeholder="example@gmail.com"
                             value={passengers[0]?.email || ''}
                             onChange={(e) => handleChange(0, 'email', e.target.value)}
-                            className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300"
+                            className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300 dark:bg-[#2F3D53]"
                         />
                         {errors[0]?.email && (
                             <p className="text-red-500 text-xs mt-1">{errors[0].email}</p>
@@ -329,7 +324,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                             placeholder="John"
                             value={passengers[0]?.firstname || ''}
                             onChange={(e) => handleChange(0, 'firstname', e.target.value)}
-                            className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300"
+                            className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300 dark:bg-[#2F3D53]"
                         />
                         {errors[0]?.firstname && (
                             <p className="text-red-500 text-xs mt-1">{errors[0].firstname}</p>
@@ -346,7 +341,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                             placeholder="Doe"
                             value={passengers[0]?.lastname || ''}
                             onChange={(e) => handleChange(0, 'lastname', e.target.value)}
-                            className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300"
+                            className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300 dark:bg-[#2F3D53]"
                         />
                         {errors[0]?.lastname && (
                             <p className="text-red-500 text-xs mt-1">{errors[0].lastname}</p>
@@ -399,7 +394,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                                         placeholder="example@gmail.com"
                                         value={passenger.email}
                                         onChange={(e) => handleChange(index, 'email', e.target.value)}
-                                        className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300"
+                                        className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300 dark:bg-[#2F3D53]"
                                     />
                                     {errors[index]?.email && (
                                         <p className="text-red-500 text-xs mt-1">{errors[index].email}</p>
@@ -432,7 +427,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                                 placeholder="John"
                                 value={passenger.firstname}
                                 onChange={(e) => handleChange(index, 'firstname', e.target.value)}
-                                className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300"
+                                className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300 dark:bg-[#2F3D53]"
                             />
                             {errors[index]?.firstname && (
                                 <p className="text-red-500 text-xs mt-1">{errors[index].firstname}</p>
@@ -449,7 +444,7 @@ const PassengerInfo = forwardRef(({ seatCount, onPassengerDataChange, tripType, 
                                 placeholder="Doe"
                                 value={passenger.lastname}
                                 onChange={(e) => handleChange(index, 'lastname', e.target.value)}
-                                className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300"
+                                className="w-full p-2 rounded-md bg-[#F8F7FD] border border-gray-300 dark:bg-[#2F3D53]"
                             />
                             {errors[index]?.lastname && (
                                 <p className="text-red-500 text-xs mt-1">{errors[index].lastname}</p>

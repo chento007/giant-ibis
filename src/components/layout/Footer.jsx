@@ -31,7 +31,7 @@ const Footer = () => {
 
 
   return (
-    <footer className="pt-12 bg-white mx-auto w-full">
+    <footer className="pt-12 bg-white mx-auto w-full dark:bg-[#0D001A]">
       <div className="w-full mx-auto px-4 lg:px-20">
         <div
           className="flex flex-col gap-8  md:grid md:grid-flow-col md:grid-rows-2 md:auto-cols-fr md:gap-[30px] 
@@ -45,7 +45,7 @@ const Footer = () => {
               height={54}
               className="mb-4"
             />
-            <p className="text-Description text-sm leading-6">
+            <p className="text-Description text-sm leading-6 dark:text-white">
               Giant Ibis Transport is a premium bus service in Cambodia,
               offering safe, comfortable, and reliable travel with modern
               amenities. It caters to tourists and locals, connecting major
@@ -115,7 +115,7 @@ const Footer = () => {
                       width={20}
                       height={22}
                     />
-                    <span className="text-Description text-sm">
+                    <span className="text-Description text-sm dark:text-white">
                       {social.name}
                     </span>
                   </a>
@@ -177,7 +177,7 @@ const Footer = () => {
                       className="flex items-center gap-3 hover:underline"
                     >
                       {item.icon}
-                      {item.tooltip}
+                      <span className="dark:text-white">{item.tooltip}</span>
                     </Link>
                   </li>
                 ))}
@@ -217,7 +217,7 @@ const Footer = () => {
                       className="flex items-center gap-3 hover:underline"
                     >
                       {item.icon}
-                      {item.label}
+                      <span className="dark:text-white">{item.label}</span>
                     </Link>
                   </li>
                 ))}

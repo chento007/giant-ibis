@@ -9,7 +9,7 @@ export const TripTypeComponent = ({ onChange, defaultValue='one-way' }) => {
 
     return (
         <div className="lg:col-span-1">
-            <Label className="block text-sm font-normal text-label pb-3">
+            <Label className="block text-sm font-normal text-label pb-3 dark:text-white">
                 Trip Type
             </Label>
             <RadioGroup
@@ -23,7 +23,7 @@ export const TripTypeComponent = ({ onChange, defaultValue='one-way' }) => {
                         id="one-way"
                         className="text-secondary "
                     />
-                    <span>One Way</span>
+                    <span className="dark:text-white">One Way</span>
                 </Label>
                 <Label className="flex items-center font-normal pb-1 text-label space-x-2 cursor-pointer">
                     <RadioGroupItem
@@ -31,7 +31,7 @@ export const TripTypeComponent = ({ onChange, defaultValue='one-way' }) => {
                         id="round-trip"
                         className="text-secondary "
                     />
-                    <span>Round Trip</span>
+                    <span className="dark:text-white">Round Trip</span>
                 </Label>
             </RadioGroup>
         </div>

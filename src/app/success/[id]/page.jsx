@@ -53,7 +53,7 @@ export default function SuccessPage({ params }) {
   };
 
   return (
-    <div className="bg-mainbg container mx-auto max-w-7xl p-4 sm:p-6">
+    <div className="bg-mainbg container mx-auto max-w-7xl p-4 sm:p-6 dark:bg-[#0D001A]">
       <SuccessTitleSecsion />
       <div className="grid lg:grid-cols-[1fr,auto] gap-4 sm:gap-1">
         <TicketConfirmation book={book?.data} />

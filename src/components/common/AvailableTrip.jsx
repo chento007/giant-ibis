@@ -781,7 +781,7 @@ export const AvailableTripItems = ({
                 <BookProgress activeStep={activeStep} />
                 <div className="grid max-sm:grid-cols-1 md:grid-cols-3 gap-8 w-full" id="select_seat">
                     <div className="flex flex-col w-full ">
-                        <div className="p-6 shadow-custom rounded-lg md:col-span-1">
+                        <div className="p-6 shadow-custom rounded-lg md:col-span-1 dark:bg-gray-800" >
                             <SeatLayout
                                 busType={routeSelected?.bus_type}
                                 allSeatStatus={routeSelected?.seat_status}
@@ -791,7 +791,7 @@ export const AvailableTripItems = ({
                         </div>
 
                         {
-                            tripType === 'round-trip' ? (<div className="p-6 shadow-custom rounded-lg md:col-span-1 mt-5">
+                            tripType === 'round-trip' ? (<div className="p-6 shadow-custom rounded-lg md:col-span-1 mt-5 dark:bg-gray-800">
                                 <SeatLayout
                                     busType={routeReturnSelected?.bus_type}
                                     allSeatStatus={routeReturnSelected?.seat_status}
@@ -803,15 +803,15 @@ export const AvailableTripItems = ({
                     </div>
 
                     {/* go trip */}
-                    <div className="mt-8 md:mt-0 space-y-6 max-sm:col-span-1 md:col-span-2">
-                        <div className="max-sm:p-2 p-6 shadow-custom rounded-lg">
+                    <div className="mt-8 md:mt-0 space-y-6 max-sm:col-span-1 md:col-span-2 ">
+                        <div className="max-sm:p-2 p-6 shadow-custom rounded-lg dark:bg-gray-800">
                             <RouteDetailComponent selectedSeat={selectedSeat} route={routeSelected} />
                         </div>
 
                         {/* return trip */}
                         {
                             tripType == 'round-trip' ?
-                                <div className="mt-8 md:mt-0 space-y-6 md:col-span-2">
+                                <div className="mt-8 md:mt-0 space-y-6 md:col-span-2 dark:bg-gray-800">
                                     <div className="p-6 shadow-custom rounded-lg">
                                         <RouteDetailComponent
                                             tripTypeTitle='Return Trip Details'
@@ -869,8 +869,8 @@ export const AvailableTripItems = ({
                         <></>
                 }
 
-                <div className="grid md:grid-cols-3 gap-6">
-                    <div className="space-y-6 md:col-span-1">
+                <div className="grid md:grid-cols-3 gap-6 ">
+                    <div className="space-y-6 md:col-span-1 ">
                         <PassengerInfo
                             seatCount={selectedSeat.length}
                             ref={passengerInfoRef}
@@ -884,7 +884,7 @@ export const AvailableTripItems = ({
                     </div>
 
                     <div className="space-y-6 md:col-span-2">
-                        <div className="p-6 shadow-custom rounded-lg">
+                        <div className="p-6 shadow-custom rounded-lg dark:bg-gray-800">
                             <RouteDetailComponent route={routeSelected} selectedSeat={selectedSeat} />
                         </div>
 
@@ -892,7 +892,7 @@ export const AvailableTripItems = ({
                         {
                             tripType == 'round-trip' ?
                                 <div className="mt-8 md:mt-0 space-y-6 md:col-span-2">
-                                    <div className="p-6 shadow-custom rounded-lg">
+                                    <div className="p-6 shadow-custom rounded-lg dark:bg-gray-800">
                                         <RouteDetailComponent tripTypeTitle='Return Trip Details' route={routeReturnSelected} selectedSeat={selectedSeatReturn} />
                                     </div>
                                 </div> : <></>
@@ -915,12 +915,12 @@ export const AvailableTripItems = ({
                             />
                         }
 
-                        <div className="border-2 border-dashed shadow-custom2 p-6 rounded-md border-pay bg-white">
+                        <div className="border-2 border-dashed shadow-custom2 p-6 rounded-md border-pay bg-white dark:bg-gray-800">
                             <h2 className="text-xl font-semibold mb-4">Payment Methods</h2>
-                            <div className="space-y-3">
+                            <div className="space-y-3 ">
                                 <div
-                                    className={` flex items-center justify-between p-4 rounded-lg border-2 ${paymentMethod === "khqr"
-                                        ? "border-primary bg-gray-200"
+                                    className={`flex items-center justify-between p-4 rounded-lg border-2 ${paymentMethod === "khqr"
+                                        ? "border-primary"
                                         : "border-gray-200"
                                         } cursor-pointer`}
                                     onClick={() => setPaymentMethod("khqr")}
@@ -943,7 +943,7 @@ export const AvailableTripItems = ({
 
                                 <div
                                     className={`flex items-center justify-between p-4 rounded-lg border-2 ${paymentMethod === "card"
-                                        ? "border-primary bg-gray-200"
+                                        ? "border-primary "
                                         : "border-gray-200"
                                         } cursor-pointer`}
                                     onClick={() => setPaymentMethod("card")}
@@ -973,7 +973,7 @@ export const AvailableTripItems = ({
                                         defaultSelected
                                         size="lg"
                                         radius="full"
-                                        className='font-medium'
+                                        className='font-medium dark:text-white'
                                         isSelected={confirmPayment}
                                         onValueChange={() => setIsConfirmPayment(!confirmPayment)}
                                     />
@@ -1012,7 +1012,7 @@ export const AvailableTripItems = ({
                                         disabled={isLoading || !confirmPayment}
                                         onClick={handlePay}
                                         className={cn(
-                                            `text-[15px] w-full rounded-md py-3 text-white bg-primary hover:bg-primary-dark`,
+                                            `text-[15px] w-full rounded-md py-3 font-semibold text-white bg-primary hover:bg-primary-dark dark:bg-white dark:text-black`,
                                             !confirmPayment ? 'cursor-not-allowed' : ''
                                         )}
                                     >
