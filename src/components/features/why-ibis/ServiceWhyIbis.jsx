@@ -9,7 +9,7 @@ export default function ServiceWhyIbis({
     index
 }) {
     return (
-        <Card className="p-6 mb-5">
+        <Card className="p-6 mb-5 dark:bg-gray-800">
             <div className="flex flex-col md:flex-row gap-6">
                 <img
                     src={`/assets/images/why-ibis/${img}`}
@@ -26,7 +26,7 @@ export default function ServiceWhyIbis({
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
                         <h2 className="text-xl font-semibold text-center">{title}</h2>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed dark:text-gray-300">
                         {content}
                     </p>
                 </div>

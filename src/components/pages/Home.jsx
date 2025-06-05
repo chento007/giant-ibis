@@ -125,7 +125,7 @@ const Home = () => {
               </div>
             </div>
             <h3 className="text-lg text-primary dark:text-white">Search</h3>
-            <p className="text-sm text-gray-600 ">
+            <p className="text-sm text-gray-600 dark:text-gray-300">
               Select your route and travel date.
             </p>
           </div>
@@ -145,7 +145,7 @@ const Home = () => {
               </div>
             </div>
             <h3 className="text-lg text-primary dark:text-white">Select Seat</h3>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600 dark:text-gray-300">
               Choose your preferred departure time and seat.
             </p>
           </div>
@@ -164,7 +164,7 @@ const Home = () => {
               </div>
             </div>
             <h3 className="text-lg  text-primary dark:text-white">Pay</h3>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600 dark:text-gray-300">
               Pay with KHQR, ABA Pay, Visa, MasterCard, or UPI.
             </p>
           </div>
@@ -194,7 +194,7 @@ const Home = () => {
               </div>
 
               <h3 className="text-lg font-semibold">{service.title}</h3>
-              <p className="text-sm text-textDescription">
+              <p className="text-sm text-textDescription dark:text-gray-300">
                 {service.description}
               </p>
             </div>
@@ -249,7 +249,7 @@ const Home = () => {
                     <h2 className="text-[18px] font-medium mb-2">
                       {destination.title}
                     </h2>
-                    <p className="text-textDescription text-[14px]">
+                    <p className="text-textDescription text-[14px] dark:text-gray-300">
                       {destination.description}
                     </p>
                   </div>

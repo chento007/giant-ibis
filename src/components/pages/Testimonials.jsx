@@ -88,7 +88,7 @@ const Testimonials = () => {
                             ))}
                           </div>
                         </div>
-                        <p className="text-gray-600 text-sm leading-relaxed dark:text-gray-400">
+                        <p className="text-gray-600 text-sm leading-relaxed dark:text-gray-300">
                           {testimonial.text}
                         </p>
                       </CardContent>
