@@ -59,8 +59,8 @@ export const AvailableTripItems = ({
 
 
     const [activeStep, setActiveStep] = useState('select');
-    const [routeSelected, setRouteSelected] = useState();
-    const [routeReturnSelected, setRouteReturnSelected] = useState();
+    const [routeSelected, setRouteSelected] = useState(null);
+    const [routeReturnSelected, setRouteReturnSelected] = useState(null);
 
     const [selectedSeat, setSelectedSeat] = useState([]);
     const [selectedSeatReturn, setSelectedSeatReturn] = useState([]);
@@ -163,9 +163,11 @@ export const AvailableTripItems = ({
             };
         });
 
-        setSelectedSeat((prevSelectedSeats) => {
+        setSelectedSeat((prevSelectedSeats = []) => {
             // Check if the seat_id already exists in the selectedSeats array
-            const seatExists = prevSelectedSeats.some(existingSeat => existingSeat.seat === seatSelected.seat);
+            const currentSeats = Array.isArray(prevSelectedSeats) ? prevSelectedSeats : [];
+
+            const seatExists = currentSeats.some(existingSeat => existingSeat.seat === seatSelected.seat);
 
             if (seatExists) {
                 // If it exists, remove the seat by filtering out the matching seat_id
@@ -201,10 +203,12 @@ export const AvailableTripItems = ({
                 }
             };
         });
+        console.log("seat selected: ", seatSelected);
 
-        setSelectedSeatReturn((prevSelectedSeats) => {
+        setSelectedSeatReturn((prevSelectedSeats = []) => {
             // Check if the seat_id already exists in the selectedSeats array
-            const seatExists = prevSelectedSeats.some(existingSeat => existingSeat.seat === seatSelected.seat);
+            const currentSeats = Array.isArray(prevSelectedSeats) ? prevSelectedSeats : [];
+            const seatExists = currentSeats.some(existingSeat => existingSeat.seat === seatSelected.seat);
 
             if (seatExists) {
                 // If it exists, remove the seat by filtering out the matching seat_id
@@ -223,10 +227,9 @@ export const AvailableTripItems = ({
          * call API to check seat status
          */
 
-
         try {
 
-            if (selectedSeat.length != passengers) {
+            if (selectedSeat?.length != passengers) {
                 showToast("error", "The number of selected seats must be equal to the number of passengers.");
                 return;
             }
@@ -240,7 +243,7 @@ export const AvailableTripItems = ({
 
             setConfirmLoading(true);
 
-            if (selectedSeat.length < 1) {
+            if (selectedSeat?.length < 1) {
                 showToast("error", "Please select at least one seat.");
                 return;
             }
@@ -321,7 +324,8 @@ export const AvailableTripItems = ({
 
             setConfirmLoading(false);
         } catch (error) {
-
+            console.log('error in confirm: ', error);
+            
         } finally {
             setConfirmLoading(false);
         }
@@ -965,7 +969,7 @@ export const AvailableTripItems = ({
                                         <div>
                                             <div className="font-semibold  text-[18px] max-sm:text-[14px]">Credit/Debit Card</div>
                                             <div className="flex gap-2 mt-1">
-                                                <img src="/assets/logos/credit-debit-card.png" alt="" className='w-full h-[20px]  rounded-md object-cover max-sm:object-contain'  />
+                                                <img src="/assets/logos/credit-debit-card.png" alt="" className='w-full h-[20px]  rounded-md object-cover max-sm:object-contain' />
                                             </div>
                                         </div>
                                     </div>

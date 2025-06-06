@@ -57,7 +57,7 @@ export default function ParentSeatLayout({
 
                                 if (item?.showTextColSpanRow) {
                                     return (
-                                        <div className={cn(Colspan[seatData.col])}>
+                                        <div className={cn(Colspan[seatData.col])} key={index}>
                                             <BunkComponent colSpan={Colspan[seatData.col]} title={"Top Bunk"} />
                                             <div className={cn('', Colspan[seatData.col])}>
                                                 <button

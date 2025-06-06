@@ -37,7 +37,7 @@ export default function ScheduleComponent() {
                   {dataDetails.map((item, index) => {
                     const contentBlock = (
                       <div className="shadow-custom p-8 rounded-md bg-white">
-                        <h3 className="font-semibold mb-2">{item.title}</h3>
+                        <h3 className="font-semibold mb-2 dark:text-black">{item.title}</h3>
                         <p className="text-sm text-gray-600 break-all w-full">{item.content}</p>
                       </div>
                     )
