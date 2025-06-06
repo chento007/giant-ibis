@@ -166,7 +166,7 @@ export const OneWayTemplate = ({
                                     <td style=" text-align: center;justify-content:center; font-family: Poppins, sans-serif;">
                                         <span style="font-size: 10px; font-weight: 500;">${duration}</span><br>
                                         <div style="height: 1px; background-color: black; width: 100%;"></div>
-                                        <span style="font-size: 10px;font-weight: 500;">${kilometer}</span><br>
+                                        <span style="font-size: 10px;font-weight: 500;">${kilometer} km</span><br>
                                     </td>
                                     <td
                                         style="width: 30%; font-weight: 600; font-size: 10px; font-family: Poppins, sans-serif; text-align: right;">
@@ -238,26 +238,19 @@ export const OneWayTemplate = ({
                         <td>Amount Departure: </td>
                         <td>$ ${price}</td>
                     </tr>
-                     ${paymentMethod != "khqr" ? `<tr>
+                     <tr>
                         <td>Service Charge: </td>
                         <td>$ ${ticketCount}</td>
-                        </tr>`: ""
-                    }
+                        </tr>
                     <tr>
                         <td>
                             <div style="margin-top: 0px; width: 120%; background-color: #A6A6A6; height: 1px;"></div>
                         </td>
                     </tr>
-                    ${paymentMethod != "khqr" ? `
-                        <tr>
+                    <tr>
                             <td>Total: </td>
                             <td>$ ${(ticketCount * price) + ticketCount}</td>
-                        </tr>`: `
-                        <tr>
-                            <td>Total: </td>
-                            <td>$ ${(ticketCount * price)}</td>
-                        </tr>`
-                    }
+                        </tr>
                 </table>
             </td>
         </tr>

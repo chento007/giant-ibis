@@ -820,7 +820,7 @@ export class PaymentService {
 
 
             transporter.sendMail({
-                from: 'Giant Ibis <info@giantibis.com>',
+                from: 'Giant Ibis Transport <info@giantibis.com>',
                 to: `${toEmail}, ${giantIbisEmail}`,
                 subject: 'Giant Ibis E-Ticket',
                 text: 'Please find your e-ticket attached.',

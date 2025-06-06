@@ -620,9 +620,7 @@ export const AvailableTripItems = ({
                 }
 
 
-                if (paymentMethod != 'khqr') {
-                    ticketCount = selectedSeat?.length + selectedSeatReturn.length;
-                }
+                ticketCount = selectedSeat?.length + selectedSeatReturn.length;
 
 
                 url = `${CLIENT_URL}/success/${bookedOnWay?.Booking_id}/${booked?.Booking_id}`
@@ -668,16 +666,11 @@ export const AvailableTripItems = ({
                 }
 
 
-                if (paymentMethod != 'khqr') {
-                    ticketCount = selectedSeat?.length;
-                }
+                ticketCount = selectedSeat?.length;
 
                 url = `${CLIENT_URL}/success/${bookedOnWay?.Booking_id}`
                 amount = (selectedSeat?.length * (Number(routeSelected?.price))) + ticketCount;
             }
-
-            console.log('come here');
-
 
             const payDate1 = moment(new Date()).format('DD-MM-YYYY');
 

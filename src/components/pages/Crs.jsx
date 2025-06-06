@@ -3,12 +3,12 @@ import SearchBookForm from "./SearchBox";
 export default function CRS() {
   return (
     <>
-    <div className="bg-mainbg max-w-5xl mx-auto px-4 py-28">
-      <h1 className="text-3xl font-bold text-Textcolor text-center mb-10">
+    <div className="bg-mainbg max-w-5xl mx-auto px-4 py-28 dark:bg-gray-800 rounded-md">
+      <h1 className="text-3xl font-bold text-Textcolor text-center mb-10 dark:text-white">
         Helping to Keep the Giant Ibis Flying
       </h1>
 
-      <div className="text-Description leading-relaxed space-y-6 text-start">
+      <div className="text-Description leading-relaxed space-y-6 text-start dark:text-white">
         <p>
           Cambodia's national bird the Giant Ibis is making a come-back after
           decades of it believed to be extinct. While the species is still

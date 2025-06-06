@@ -7,6 +7,14 @@ import { cn } from "@/lib/utils";
 import { Skeleton } from "@heroui/react";
 import { Select } from "antd";
 import './select-province-placehoder.css'
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+    subsets: ['latin'],
+    weight: ['400'],
+    variable: '--font-poppins',
+});
+
 export const SelectProvince = ({
     title,
     items,
@@ -16,6 +24,9 @@ export const SelectProvince = ({
     value,
     loading = false,
 }) => {
+
+
+
     return (
         <div className={cn('w-full', colspan)}>
             <Label htmlFor="origin" className="block text-sm font-normal pb-1 text-label mb-2 dark:text-white">
@@ -38,7 +49,9 @@ export const SelectProvince = ({
                         value={value}
                         placeholder={`Select ${title}`}
                         optionFilterProp="label"
-                        className="w-full h-[39px] custom-select-placeholder dark-mode-select"
+                        className={cn(
+                            `w-full h-[39px] custom-select-placeholder dark-mode-select`,
+                            poppins.className,)}
                         filterOption={(input, option) =>
                             (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
                         }

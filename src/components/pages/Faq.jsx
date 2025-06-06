@@ -33,11 +33,11 @@ export default function FAQ() {
   };
 
   return (
-    <div className=" bg-mainbg max-w-4xl mx-auto px-4 py-28">
-      <h2 className="text-3xl font-bold text-center text-primary mb-4">
+    <div className=" bg-mainbg max-w-4xl mx-auto px-4 py-28 dark:bg-gray-800 rounded-md">
+      <h2 className="text-3xl font-bold text-center text-primary mb-4 dark:text-white">
         Frequently Asked Questions
       </h2>
-      <p className="text-center text-Textcolor mb-10">
+      <p className="text-center text-Textcolor mb-10 dark:text-gray-300">
         Can’t find the answer you’re looking for? Reach out to our customer
         support team.
       </p>
@@ -51,15 +51,15 @@ export default function FAQ() {
               className="flex justify-between items-center"
               onClick={() => toggleFAQ(index)}
             >
-              <h3 className="text-lg text-black">{faq.question}</h3>
+              <h3 className="text-lg text-black dark:text-white" >{faq.question}</h3>
               {activeIndex === index ? (
                 <ChevronUp className="w-5 h-5 text-gray-500" />
               ) : (
-                <ChevronDown className="w-5 h-5 text-gray-500" />
+                <ChevronDown className="w-5 h-5 text-gray-500 " />
               )}
             </div>
             {activeIndex === index && (
-              <p className="text-gray-600 mt-3">{faq.answer}</p>
+              <p className="text-gray-600 mt-3 dark:text-gray-300">{faq.answer}</p>
             )}
           </div>
         ))}

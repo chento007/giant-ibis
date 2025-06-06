@@ -18,17 +18,14 @@ export default function DepartureTripBillDetail({
                     <span className="text-gray-600 dark:text-gray-400">Total Travellers</span>
                     <span>{selectedSeat}</span>
                 </div>
-                {
-                    paymentMethod != "khqr" ? <div className="flex justify-between">
-                        <span className="text-gray-600 dark:text-gray-400">Service Charge</span>
-                        <span>$ {selectedSeat}</span>
-                    </div> : <></>
-                }
+                <div className="flex justify-between">
+                    <span className="text-gray-600 dark:text-gray-400 ">Service Charge</span>
+                    <span>$ {selectedSeat}</span>
+                </div>
+
                 <div className="flex justify-between font-medium pt-3 border-t">
                     <span>Total Charge</span>
-                    {
-                        paymentMethod != "khqr" ? <span>${totalCharge + selectedSeat}</span> : <span>${totalCharge}</span>
-                    }
+                    <span>${totalCharge + selectedSeat}</span>
                 </div>
             </div>
         </div>

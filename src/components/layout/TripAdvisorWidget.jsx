@@ -21,29 +21,27 @@ const TripAdvisorWidget = () => {
     }, []);
 
     return (
-        <div className="bg-white dark:bg-gray-800 w-[160px] overflow-hidden">
-            <div
-                id="TA_excellent937"
-                ref={widgetRef}
-                className="w-full flex justify-center items-center rounded-md "
-            >
-                <ul id="kdkGoSmW" className="TA_links nvYOvGpsi">
-                    <li id="ZY0R2C" className="OAiwrjWKy">
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href="https://www.tripadvisor.co.uk/Attraction_Review-g293940-d9604106-Reviews-Giant_Ibis_Transport-Phnom_Penh.html"
-                        >
-                            <img
-                                src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg"
-                                alt="TripAdvisor"
-                                className="widEXCIMG object-cover"
-                                id="CDSWIDEXCLOGO"
-                            />
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div
+            id="TA_excellent937"
+            ref={widgetRef}
+            className="flex justify-center items-center rounded-md w-[160px]"
+        >
+            <ul id="kdkGoSmW" className="TA_links nvYOvGpsi">
+                <li id="ZY0R2C" className="OAiwrjWKy">
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.tripadvisor.co.uk/Attraction_Review-g293940-d9604106-Reviews-Giant_Ibis_Transport-Phnom_Penh.html"
+                    >
+                        <img
+                            src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg"
+                            alt="TripAdvisor"
+                            className="widEXCIMG object-cover"
+                            id="CDSWIDEXCLOGO"
+                        />
+                    </a>
+                </li>
+            </ul>
         </div>
     );
 };

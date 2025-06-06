@@ -100,7 +100,7 @@ const Navbar = () => {
               <span className="dark:text-white">{icon}</span>
               <span className="text-center text-sm dark:text-white">{tooltip}</span>
               <span className="hidden">{tooltip}</span>
-              <span className="absolute left-1/2 -translate-x-1/2 -bottom-8 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap dark:text-primary">
+              <span className="absolute left-1/2 -translate-x-1/2 -bottom-8 px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap dark:text-white">
                 {tooltip}
               </span>
             </Link>
@@ -128,7 +128,8 @@ const Navbar = () => {
             />
           </button>
           <Link
-            href="/login"
+            href="https://partner.giantibis.com"
+            target="_blank"
             className="hidden sm:inline-block bg-primary text-white py-2 px-8 rounded-md transition-colors"
           >
             Login

@@ -143,7 +143,7 @@ export const RoundTripMailTemplate = ({
                     <tr>
                         <td>
                             <div style="font-weight: 700; font-size: 18px; color: #0057A8; font-family: Poppins, sans-serif;"
-                                class="title">Return Trip Detail</div>
+                                class="title">Departure Trip Detail</div>
                             <table style="width: 100%; margin-top: 10px; border-collapse: collapse;">
                                 <tr>
                                     <td style="font-weight: 600; font-size: 10px; font-family: Poppins, sans-serif;">
@@ -182,7 +182,7 @@ export const RoundTripMailTemplate = ({
                                     <td style=" text-align: center;justify-content:center; font-family: Poppins, sans-serif;">
                                         <span style="font-size: 10px; font-weight: 500;">${duration}</span><br>
                                         <div style="height: 1px; background-color: black; width: 100%;"></div>
-                                        <span style="font-size: 10px;font-weight: 500;">${kilometer}</span><br>
+                                        <span style="font-size: 10px;font-weight: 500;">${kilometer} km</span><br>
                                     </td>
                                     <td
                                         style="width: 30%; font-weight: 600; font-size: 10px; font-family: Poppins, sans-serif; text-align: right;">
@@ -200,7 +200,7 @@ export const RoundTripMailTemplate = ({
                     <tr>
                         <td>
                             <div style="font-weight: 700; font-size: 18px; color: #0057A8; font-family: Poppins, sans-serif;"
-                                class="title">Departure Trip Detail</div>
+                                class="title">Return Trip Detail</div>
                             <table style="width: 100%; margin-top: 10px; border-collapse: collapse;">
                                 <tr>
                                     <td style="font-weight: 600; font-size: 10px; font-family: Poppins, sans-serif;">
@@ -239,7 +239,7 @@ export const RoundTripMailTemplate = ({
                                     <td style=" text-align: center;justify-content:center; font-family: Poppins, sans-serif;">
                                         <span style="font-size: 10px; font-weight: 500;">${durationReturn}</span><br>
                                         <div style="height: 1px; background-color: black; width: 100%;"></div>
-                                        <span style="font-size: 10px;font-weight: 500;">${kilometerReturn}</span><br>
+                                        <span style="font-size: 10px;font-weight: 500;">${kilometerReturn} km</span><br>
                                     </td>
                                     <td
                                         style="width: 30%; font-weight: 600; font-size: 10px; font-family: Poppins, sans-serif; text-align: right;">
@@ -321,24 +321,20 @@ export const RoundTripMailTemplate = ({
                         <td>Amount Return: </td>
                         <td>$ ${priceReturn}</td>
                     </tr>
-                    ${paymentMethod != "khqr" ? `<tr>
+                    <tr>
                         <td>Service Charge: </td>
                         <td>$ ${ticketCount + ticketCountReturn}</td>
-                    </tr>`: ""
-                    }
+                    </tr>
                     <tr>
                         <td>
                             <div style="margin-top: 0px; width: 120%; background-color: #A6A6A6; height: 1px;"></div>
                         </td>
                     </tr>
-                    ${paymentMethod != "khqr" ? `<tr>
+
+                    <tr>
                         <td>Total: </td>
                         <td>$ ${((price * ticketCount) + (priceReturn * ticketCountReturn) + (ticketCount + ticketCountReturn))}</td>
-                    </tr>`: `<tr>
-                        <td>Total: </td>
-                        <td>$ ${((price * ticketCount) + (priceReturn * ticketCountReturn))}</td>
-                    </tr>`
-                    }
+                    </tr>
                 </table>
             </td>
         </tr>

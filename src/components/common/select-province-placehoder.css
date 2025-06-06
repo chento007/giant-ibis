@@ -1,29 +1,27 @@
-/* Light mode background */
 .custom-select-placeholder .ant-select-selector {
   background-color: #ffffff !important;
 }
+.dark-mode-select .ant-select-selection-placeholder{
+  color: #000000;
+}
 
-/* Dark mode background */
 .dark .dark-mode-select .ant-select-selector {
   background-color: #2A2A2A !important;
   border-color: #444 !important;
 }
 
-/* Optional: Change text and placeholder colors for dark mode */
 .dark .dark-mode-select .ant-select-selection-placeholder {
-  color: #CCCCCC !important;
+  color: #FFFFFF !important;
 }
 
 .dark .dark-mode-select .ant-select-selection-item {
   color: #FFFFFF !important;
 }
 
-/* Default light mode icon color */
 .custom-select-placeholder .ant-select-arrow {
   color: #000000 !important;
 }
 
-/* Dark mode: dropdown icon color */
 .dark .dark-mode-select .ant-select-arrow {
   color: #ffffff !important;
 }

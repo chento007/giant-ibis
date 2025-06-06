@@ -23,17 +23,13 @@ export default function RoundTripBillDetail({
                     <span className="text-gray-600 dark:text-gray-300">Total Travellers</span>
                     <span>{totalTraveller}</span>
                 </div>
-                {
-                    paymentMethod != "khqr" ? <div className="flex justify-between">
-                        <span className="text-gray-600">Service Charge</span>
-                        <span>$ {totalTraveller}</span>
-                    </div> : <></>
-                }
+                <div className="flex justify-between">
+                    <span className="text-gray-600 dark:text-gray-300">Service Charge</span>
+                    <span>$ {totalTraveller}</span>
+                </div>
                 <div className="flex justify-between font-medium pt-3 border-t">
                     <span>Total Charge</span>
-                    {
-                        paymentMethod != "khqr" ? <span>${totalCharge + totalTraveller}</span> : <span>${totalCharge}</span>
-                    }
+                    <span>${totalCharge + totalTraveller}</span>
                 </div>
             </div>
         </div>

@@ -73,19 +73,14 @@ export default function TicketConfirmation({
                   <div><span className="text-gray-500 pr-5 dark:text-white">Booking Status: </span> {book?.seat_status}</div>
                   <div><span className="text-gray-500 pr-5 dark:text-white">Price: </span> {book?.price}</div>
                   <div><span className="text-gray-500 pr-5 dark:text-white">Ticket: </span> {book?.ticketCount}</div>
-                  {
-                    book?.paymentMethod != 'khqr' ? <div><span className="text-gray-500 pr-5">Service Charge: </span>$ {book?.ticketCount}</div> : <></>
-                  }
+                  <div><span className="text-gray-500 pr-5 dark:text-white" >Service Charge: </span>$ {book?.ticketCount}</div>
                 </div>
               </div>
             </div>
 
             <div className="flex justify-between items-end pt-4 border-t">
               <div className="text-gray-600 dark:text-white">Total Fare</div>
-              {
-                book?.paymentMethod != 'khqr' ? <div className="text-xl font-medium">${(Number(book?.price) * book?.ticketCount) + book?.ticketCount}</div> : <div className="text-xl font-medium">${Number(book?.price) * book?.ticketCount}</div>
-              }
-
+              <div className="text-xl font-medium">${(Number(book?.price) * book?.ticketCount) + book?.ticketCount}</div>
             </div>
           </div>
         </div>
