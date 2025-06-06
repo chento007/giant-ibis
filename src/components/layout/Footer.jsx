@@ -29,7 +29,6 @@ import TripAdvisorWidget from "./TripAdvisorWidget";
 const Footer = () => {
 
 
-
   return (
     <footer className="pt-12 bg-white mx-auto w-full dark:bg-[#0D001A]">
       <div className="w-full mx-auto px-4 lg:px-20">
@@ -237,7 +236,7 @@ const Footer = () => {
                   <h3 className="font-semibold mb-4">Coming Soon</h3>
                   <div className="flex gap-4">
                     <Image
-                      src="/assets/images/download-apps.png"
+                      src="/assets/images/app-play.png"
                       alt="App Store"
                       width={120}
                       height={40}
@@ -251,10 +250,10 @@ const Footer = () => {
                 <h3 className="font-semibold">We Accept</h3>
                 <div className="flex gap-3">
                   <Image
-                    src="/assets/images/creditcards.png"
+                    src="/assets/images/credit1-card.png"
                     alt="KHR"
                     width={180}
-                    height={20}
+                    height={30}
                     className="w-auto h-auto"
                   />
                 </div>
@@ -265,7 +264,7 @@ const Footer = () => {
       </div>
 
       <div className="w-full mt-10 border-t bg-primary py-4 text-center text-sm text-white">
-        Powered By Giant Ibis © {new Date().getFullYear()}
+        Powered By Giant Ibis Transport © {new Date().getFullYear()}
       </div>
     </footer>
   );

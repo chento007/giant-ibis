@@ -21,13 +21,7 @@ const TripAdvisorWidget = () => {
     }, []);
 
     return (
-        <div className="bg-white dark:bg-gray-800 border-2 rounded-md border-[#00a568] flex flex-col justify-center items-center w-[160px] overflow-hidden">
-            <div className="font-bold text-center w-full bg-[#00a568] p-2 text-white">
-                Bravo!
-            </div>
-            <div className="text-sm p-2 text-center underline text-gray-700 dark:text-gray-300">
-                Giant Ibis Transport rated "excellent" by 1,386 travellers
-            </div>
+        <div className="w-[200px] bg-white">
             <div
                 id="TA_excellent937"
                 ref={widgetRef}

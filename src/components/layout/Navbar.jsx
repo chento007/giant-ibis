@@ -40,12 +40,6 @@ const Navbar = () => {
 
   const navIcons = [
     {
-      id: 1,
-      icon: <BusFront className="iconSVG w-5 h-5 lg:w-[23px] lg:h-[23px]" />,
-      tooltip: "Book",
-      href: "/book",
-    },
-    {
       id: 2,
       icon: <Bus className="iconSVG w-5 h-5 lg:w-[23px] lg:h-[23px]" />,
       tooltip: "WHY IBIS",
@@ -74,12 +68,6 @@ const Navbar = () => {
       icon: <Earth className="iconSVG w-5 h-5 lg:w-[23px] lg:h-[23px]" />,
       tooltip: "Border Crossing",
       href: "/crossing",
-    },
-    {
-      id: 7,
-      icon: <Split className="iconSVG w-5 h-5 lg:w-[25px] lg:h-[25px]" />,
-      tooltip: "Our Branch",
-      href: "/branch",
     },
   ];
 
