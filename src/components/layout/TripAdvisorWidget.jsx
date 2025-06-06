@@ -21,11 +21,11 @@ const TripAdvisorWidget = () => {
     }, []);
 
     return (
-        <div className="bg-white dark:bg-gray-800 border-2 rounded-md border-[#00a568] flex flex-col justify-center items-center w-[160px] overflow-hidden">
+        <div className="bg-white dark:bg-gray-800 w-[160px] overflow-hidden">
             <div
                 id="TA_excellent937"
                 ref={widgetRef}
-                className="w-full flex justify-center items-center px-4 py-2"
+                className="w-full flex justify-center items-center rounded-md "
             >
                 <ul id="kdkGoSmW" className="TA_links nvYOvGpsi">
                     <li id="ZY0R2C" className="OAiwrjWKy">
