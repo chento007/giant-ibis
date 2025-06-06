@@ -21,7 +21,7 @@ const TripAdvisorWidget = () => {
     }, []);
 
     return (
-        <div className="w-[200px] bg-white">
+        <div className="bg-white dark:bg-gray-800 border-2 rounded-md border-[#00a568] flex flex-col justify-center items-center w-[160px] overflow-hidden">
             <div
                 id="TA_excellent937"
                 ref={widgetRef}
