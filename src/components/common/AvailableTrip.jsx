@@ -325,7 +325,7 @@ export const AvailableTripItems = ({
             setConfirmLoading(false);
         } catch (error) {
             console.log('error in confirm: ', error);
-            
+
         } finally {
             setConfirmLoading(false);
         }
@@ -959,9 +959,9 @@ export const AvailableTripItems = ({
                                         <div className='h-full'>
                                             <img src="/assets/logos/acelida.png" alt="" className='w-[70px] h-[70px]  rounded-md object-contain' />
                                         </div>
-                                          <div>
+                                        <div>
                                             <div className='text-lg max-sm:text-[14px] font-bold'>ACLEDA Pay and KHQR</div>
-                                            <div className='text-sm max-sm:text-[10px]'>Accept Bank and Wallet Account/KHQR</div>
+                                            <img src="/assets/logos/credit-debit-card.png" alt="" className='w-full h-[20px] rounded-md object-cover' />
                                         </div>
                                     </div>
                                 </div>
