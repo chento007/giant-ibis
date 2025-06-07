@@ -957,13 +957,11 @@ export const AvailableTripItems = ({
                                             className="w-4 h-4 text-primary"
                                         />
                                         <div className='h-full'>
-                                            <img src="/assets/logos/khqr-logo.png" alt="" className='w-[60px] h-[60px]  rounded-md object-contain' />
+                                            <img src="/assets/logos/acelida.png" alt="" className='w-[70px] h-[70px]  rounded-md object-contain' />
                                         </div>
-                                        <div>
-                                            <div className="font-semibold  text-[18px] max-sm:text-[14px]">Credit/Debit Card</div>
-                                            <div className="flex gap-2 mt-1">
-                                                <img src="/assets/logos/credit-debit-card.png" alt="" className='w-full h-[20px]  rounded-md object-cover max-sm:object-contain' />
-                                            </div>
+                                          <div>
+                                            <div className='text-lg max-sm:text-[14px] font-bold'>ACLEDA Pay and KHQR</div>
+                                            <div className='text-sm max-sm:text-[10px]'>Accept Bank and Wallet Account/KHQR</div>
                                         </div>
                                     </div>
                                 </div>
