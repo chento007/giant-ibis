@@ -960,7 +960,7 @@ export const AvailableTripItems = ({
                                             <img src="/assets/logos/acelida.png" alt="" className='w-[70px] h-[70px]  rounded-md object-contain' />
                                         </div>
                                         <div>
-                                            <div className='text-lg max-sm:text-[14px] font-bold'>ACLEDA Pay and KHQR</div>
+                                            <div className='text-lg max-sm:text-[14px] font-bold'>Credit/Debit Card</div>
                                             <img src="/assets/logos/credit-debit-card.png" alt="" className='max-sm:w-[150px] max-sm:object-fill h-[20px] rounded-md object-cover' />
                                         </div>
                                     </div>
