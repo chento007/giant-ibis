@@ -961,7 +961,7 @@ export const AvailableTripItems = ({
                                         </div>
                                         <div>
                                             <div className='text-lg max-sm:text-[14px] font-bold'>ACLEDA Pay and KHQR</div>
-                                            <img src="/assets/logos/credit-debit-card.png" alt="" className='w-full h-[20px] rounded-md object-cover' />
+                                            <img src="/assets/logos/credit-debit-card.png" alt="" className='max-sm:w-[150px] max-sm:object-fill h-[20px] rounded-md object-cover' />
                                         </div>
                                     </div>
                                 </div>
