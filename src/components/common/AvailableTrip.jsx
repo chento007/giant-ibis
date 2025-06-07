@@ -957,7 +957,7 @@ export const AvailableTripItems = ({
                                             className="w-4 h-4 text-primary"
                                         />
                                         <div className='h-full'>
-                                            <img src="/assets/logos/acelida.png" alt="" className='w-[70px] h-[70px] max-sm:h-full rounded-md object-contain' />
+                                            <img src="/assets/logos/acelida.png" alt="" className='w-[70px] h-[70px]  rounded-md object-contain' />
                                         </div>
                                         <div>
                                             <div className="font-semibold  text-[18px] max-sm:text-[14px]">Credit/Debit Card</div>
