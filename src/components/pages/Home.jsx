@@ -95,6 +95,13 @@ const Home = () => {
         "Cambodia’s top beach destination, offers white-sand beaches, tropical islands, water activities, and vibrant nightlife. Relax with fresh seafood, explore islands like Koh Rong, or enjoy diving and snorkeling in clear waters. The nightlife buzzes late into the night.",
     },
     {
+      id: 7,
+      image: "/assets/images/battambong.png",
+      title: "Battambang",
+      description:
+        "Battambang, Cambodia’s second-largest city, is a UNESCO Creative City of Gastronomy known for its rich culture, colonial charm, and thriving arts scene. Famous for its fertile lands and fragrant jasmine rice, it blends history with modern creativity.",
+    },
+    {
       id: 5,
       image: "/assets/images/hochiminh.jpg",
       title: "Ho Chi Minh City",
